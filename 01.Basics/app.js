@@ -11,7 +11,10 @@ var isMarried = false;
 //Alert
 alert(nome + " is " + age + " years old." + " He earns " + salary + " and is married: " + isMarried);
 
-document.write(nome + " is " + age + " years old." + " He earns " + salary + " and is married: " + isMarried);
+document.write(age);
 
 //Console
-console.log(nome + " is " + age + " years old." + " He earns " + salary + " and is married: " + isMarried);
+console.log(nome);
+
+//Concatenação
+document.write("<br>" + nome + " is " + age + " years old." + " He earns " + salary + " and is married: " + isMarried);

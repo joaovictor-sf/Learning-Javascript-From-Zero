@@ -15,10 +15,11 @@ Sinta-se à vontade para contribuir com este repositório, adicionando exemplos 
 - [Adicionando javascript a um documento HTML](#adicionando-javascript-a-um-documento-html)
 - [Comentários](#comentários)
 - [Variáveis](#variáveis)
-- [Tipos de Dados](#tipos-de-dados)
 - [Alertas](#alertas)
 - [Fazer o javascript interagir com o HTML](#fazer-o-javascript-interagir-com-o-html)
 - [Console](#console)
+- [Concatenação](#concatenação)
+- [prompt](#prompt)
 
 ### Adicionando javascript a um documento HTML
 Existe três formas de adicionar javascript a um documento HTML:
@@ -71,7 +72,7 @@ var idade = 30;
 var isEstudante = true;
 ```
 
-### Tipos de Dados
+#### Tipos de Dados
 Em javascript, temos os seguintes tipos de dados:
 1. **String**: Sequência de caracteres.
 2. **Number**: Números inteiros ou decimais.
@@ -97,6 +98,10 @@ var nulo = null; // Null
 - O nome de uma variável não pode conter espaços.
 - O nome de uma variável é case-sensitive.
 
+**Null vs Undefined**:
+- `null` é um valor atribuído pelo programador para indicar a ausência de valor.
+- `undefined` é um valor atribuído automaticamente pelo JavaScript para indicar que uma variável não foi inicializada.
+
 ### Alertas
 Para exibir alertas em javascript, utilizamos a função `alert()`.
 
@@ -111,6 +116,8 @@ alert('Olá Mundo!');
 Para fazer o javascript interagir com o HTML, podemos utilizar o método `document`.
 
 O `document` é um objeto que representa o documento HTML. Ele possui vários métodos e propriedades que nos permitem acessar e modificar elementos HTML.
+
+É possivel colocar tags dentro dele.
 
 #### Exemplo de código:
 ```html
@@ -141,3 +148,49 @@ console.log('Olá Mundo!');
 Isso é útil para depurar o código javascript e verificar o valor das variáveis durante a execução do programa.
 
 É possivel ver o console do navegador pressionando `F12` e clicando na aba `Console`.
+
+### Concatenação
+Para concatenar strings em javascript, utilizamos o operador `+`.
+```javascript
+var nome = 'Fulano';
+var sobrenome = 'de Tal';
+var nomeCompleto = nome + ' ' + sobrenome;
+console.log(nomeCompleto); // Fulano de Tal
+```
+
+### prompt
+Gera uma caixa de diálogo que solicita ao usuário um valor de entrada.
+```javascript
+var nome = prompt('Qual é o seu nome?');
+console.log('Olá, ' + nome + '!');
+```
+
+Esse valor sempre será uma string.
+
+### If/else
+O `if` é uma estrutura de controle que permite executar um bloco de código se uma condição for verdadeira. O `else` é um bloco de código que é executado se a condição do `if` for falsa.
+
+#### Exemplo de código:
+```javascript
+var idade = 18;
+
+if (idade >= 18) {
+  console.log('Você é maior de idade.');
+} else if (idade <= 0){
+    console.log('Você não nasceu ainda.');
+} else {
+  console.log('Você é menor de idade.');
+}
+```
+
+### Operadores de Comparação
+Os operadores de comparação são utilizados para comparar dois valores e retornar um valor lógico (verdadeiro ou falso).
+
+- `==`: Igual a
+- `!=`: Diferente de
+- `===`: Igual a (comparação estrita[Se são iguais e do mesmo tipo])
+- `!==`: Diferente de (comparação estrita)
+- `>`: Maior que
+- `<`: Menor que
+- `>=`: Maior ou igual a
+- `<=`: Menor ou igual a
