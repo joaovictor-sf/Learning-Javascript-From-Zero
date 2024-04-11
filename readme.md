@@ -15,13 +15,17 @@ Sinta-se à vontade para contribuir com este repositório, adicionando exemplos 
 - [Adicionando javascript a um documento HTML](#adicionando-javascript-a-um-documento-html)
 - [Comentários](#comentários)
 - [Variáveis](#variáveis)
+    - [Tipos de Dados](#tipos-de-dados)
 - [Alertas](#alertas)
 - [Fazer o javascript interagir com o HTML](#fazer-o-javascript-interagir-com-o-html)
 - [Console](#console)
 - [Concatenação](#concatenação)
 - [prompt](#prompt)
+- [If/else](#ifelse)
+    - [Operadores de Comparação](#operadores-de-comparação)
+    - [Operadores Lógicos](#operadores-lógicos)
 
-### Adicionando javascript a um documento HTML
+## Adicionando javascript a um documento HTML
 Existe três formas de adicionar javascript a um documento HTML:
 1. **Inline**: Adicionando o código javascript diretamente na tag HTML.
 2. **Internal**: Adicionando o código javascript dentro da tag `<script>` no documento HTML.
@@ -49,7 +53,7 @@ alert('Olá Mundo!');
 ```
 É importante ressaltar que a tag `<script>` deve ser adicionada no final do corpo do documento HTML para garantir que o código javascript seja executado após o carregamento do conteúdo da página.
 
-### Comentários
+## Comentários
 Para adicionar comentários em javascript, utilizamos `//` para comentários de uma linha e `/* */` para comentários de múltiplas linhas. Semelhante ao Java e CSS.
 
 #### Exemplos de comentários:
@@ -62,7 +66,7 @@ de múltiplas linhas
 */
 ```
 
-### Variáveis
+## Variáveis
 Em javascript, utilizamos a palavra-chave `var` para declarar variáveis. As variáveis podem armazenar diferentes tipos de dados, como números, strings e booleanos.
 
 #### Exemplo de declaração de variáveis:
@@ -72,7 +76,7 @@ var idade = 30;
 var isEstudante = true;
 ```
 
-#### Tipos de Dados
+### Tipos de Dados
 Em javascript, temos os seguintes tipos de dados:
 1. **String**: Sequência de caracteres.
 2. **Number**: Números inteiros ou decimais.
@@ -102,7 +106,7 @@ var nulo = null; // Null
 - `null` é um valor atribuído pelo programador para indicar a ausência de valor.
 - `undefined` é um valor atribuído automaticamente pelo JavaScript para indicar que uma variável não foi inicializada.
 
-### Alertas
+## Alertas
 Para exibir alertas em javascript, utilizamos a função `alert()`.
 
 Um alerta é uma caixa de diálogo que exibe uma mensagem e um botão "OK". Ele é útil para exibir informações importantes para o usuário ou para ajudar com o processo de depuração.
@@ -112,7 +116,7 @@ Um alerta é uma caixa de diálogo que exibe uma mensagem e um botão "OK". Ele 
 alert('Olá Mundo!');
 ```
 
-### Fazer o javascript interagir com o HTML
+## Fazer o javascript interagir com o HTML
 Para fazer o javascript interagir com o HTML, podemos utilizar o método `document`.
 
 O `document` é um objeto que representa o documento HTML. Ele possui vários métodos e propriedades que nos permitem acessar e modificar elementos HTML.
@@ -138,7 +142,7 @@ document.getElementById('paragrafo').innerHTML = 'Este é um novo parágrafo.';
 - `removeChild()`: Remove um elemento HTML filho de outro elemento.
 - `write()`: Escreve conteúdo HTML no documento.
 
-### Console
+## Console
 O console é uma ferramenta de desenvolvimento que nos permite visualizar mensagens de depuração no navegador.
 
 Para exibir mensagens no console, utilizamos o método `console.log()`.
@@ -149,7 +153,7 @@ Isso é útil para depurar o código javascript e verificar o valor das variáve
 
 É possivel ver o console do navegador pressionando `F12` e clicando na aba `Console`.
 
-### Concatenação
+## Concatenação
 Para concatenar strings em javascript, utilizamos o operador `+`.
 ```javascript
 var nome = 'Fulano';
@@ -158,7 +162,7 @@ var nomeCompleto = nome + ' ' + sobrenome;
 console.log(nomeCompleto); // Fulano de Tal
 ```
 
-### prompt
+## prompt
 Gera uma caixa de diálogo que solicita ao usuário um valor de entrada.
 ```javascript
 var nome = prompt('Qual é o seu nome?');
@@ -167,10 +171,9 @@ console.log('Olá, ' + nome + '!');
 
 Esse valor sempre será uma string.
 
-### If/else
+## If/else
 O `if` é uma estrutura de controle que permite executar um bloco de código se uma condição for verdadeira. O `else` é um bloco de código que é executado se a condição do `if` for falsa.
 
-#### Exemplo de código:
 ```javascript
 var idade = 18;
 
@@ -194,3 +197,42 @@ Os operadores de comparação são utilizados para comparar dois valores e retor
 - `<`: Menor que
 - `>=`: Maior ou igual a
 - `<=`: Menor ou igual a
+
+## Operadores Lógicos
+Os operadores lógicos são utilizados para combinar duas ou mais expressões lógicas e retornar um valor lógico.
+
+- `&&`: E lógico (AND)
+- `||`: Ou lógico (OR)
+- `!`: Negação lógica (NOT)
+
+```javascript
+var idade = 18;
+var isEstudante = true;
+
+if (idade >= 18 && isEstudante) {
+  console.log('Você é maior de idade e estudante.');
+} else {
+  console.log('Você é menor de idade ou não é estudante.');
+}
+```
+
+## Operador Ternário
+O operador ternário é uma forma abreviada de escrever uma instrução `if/else`.
+
+```javascript
+var idade = 18;
+var status = (idade >= 18) ? 'Maior de idade' : 'Menor de idade';
+console.log(status); // Maior de idade
+```
+
+## Casting
+O casting é a conversão de um tipo de dado para outro.
+
+- `Number()`: Converte um valor para número.
+- `String()`: Converte um valor para string.
+- `Boolean()`: Converte um valor para boolean.
+
+```javascript
+var numero = '10';
+console.log(Number(numero) + 5); // 15
+```
