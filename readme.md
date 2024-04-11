@@ -216,13 +216,50 @@ if (idade >= 18 && isEstudante) {
 }
 ```
 
-## Operador Ternário
+### Operador Ternário
 O operador ternário é uma forma abreviada de escrever uma instrução `if/else`.
 
 ```javascript
 var idade = 18;
 var status = (idade >= 18) ? 'Maior de idade' : 'Menor de idade';
 console.log(status); // Maior de idade
+```
+
+### Switch
+O `switch` é uma estrutura de controle que permite executar um bloco de código com base em uma expressão.
+
+```javascript
+var dia = 1;
+var diaDaSemana;
+
+switch (dia) {
+  case 1:
+    diaDaSemana = 'Domingo';
+    break;
+  case 2:
+    diaDaSemana = 'Segunda-feira';
+    break;
+  case 3:
+    diaDaSemana = 'Terça-feira';
+    break;
+  case 4:
+    diaDaSemana = 'Quarta-feira';
+    break;
+  case 5:
+    diaDaSemana = 'Quinta-feira';
+    break;
+  case 6:
+    diaDaSemana = 'Sexta-feira';
+    break;
+  case 7:
+    diaDaSemana = 'Sábado';
+    break;
+  default:
+    diaDaSemana = 'Dia inválido';
+    break;
+}
+
+console.log(diaDaSemana); // Domingo
 ```
 
 ## Casting
@@ -235,4 +272,41 @@ O casting é a conversão de um tipo de dado para outro.
 ```javascript
 var numero = '10';
 console.log(Number(numero) + 5); // 15
+```
+
+## Operadores Aritméticos
+Os operadores aritméticos são utilizados para realizar operações matemáticas.
+
+- `+`: Adição
+- `-`: Subtração
+- `*`: Multiplicação
+- `/`: Divisão
+- `%`: Módulo (resto da divisão)
+- `++`: Incremento
+- `--`: Decremento
+
+```javascript
+var x = 10;
+var y = 5;
+
+console.log(x + y); // 15
+console.log(x - y); // 5
+console.log(x * y); // 50
+console.log(x / y); // 2
+console.log(x % y); // 0
+console.log(x++); // 10
+console.log(x); // 11
+console.log(y--); // 5
+console.log(y); // 4
+```
+
+Você tambem pode realizar os calculos de forma mais simples:
+```javascript
+var x = 10;
+var y = 5;
+
+x += y; // x = x + y
+x -= y; // x = x - y
+x *= y; // x = x * y
+x /= y; // x = x / y
 ```
