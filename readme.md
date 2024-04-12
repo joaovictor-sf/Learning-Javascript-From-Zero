@@ -24,6 +24,18 @@ Sinta-se à vontade para contribuir com este repositório, adicionando exemplos 
 - [If/else](#ifelse)
     - [Operadores de Comparação](#operadores-de-comparação)
     - [Operadores Lógicos](#operadores-lógicos)
+    - [Operador Ternário](#operador-ternário)
+    - [Switch](#switch)
+- [Casting](#casting)
+- [Operadores Aritméticos](#operadores-aritméticos)
+- [Funções](#funções)
+    - [Flexibilidade de parametros](#flexibilidade-de-parametros)
+    - [Funções Anônimas](#funções-anônimas)
+    - [Funções de Callback](#funções-de-callback)
+- [String](#string)
+    - [Propriedades e Métodos](#propriedades-e-métodos)
+- [Math](#math)
+- [Date](#date)
 
 ## Adicionando javascript a um documento HTML
 Existe três formas de adicionar javascript a um documento HTML:
@@ -141,6 +153,8 @@ document.getElementById('paragrafo').innerHTML = 'Este é um novo parágrafo.';
 - `appendChild()`: Adiciona um novo elemento HTML como filho de outro elemento.
 - `removeChild()`: Remove um elemento HTML filho de outro elemento.
 - `write()`: Escreve conteúdo HTML no documento.
+
+**write()**: É aceitavel usar o `document.write()` para testes, mas não é recomendado para uso em produção, pois ele substitui todo o conteúdo do documento.
 
 ## Console
 O console é uma ferramenta de desenvolvimento que nos permite visualizar mensagens de depuração no navegador.
@@ -309,4 +323,128 @@ x += y; // x = x + y
 x -= y; // x = x - y
 x *= y; // x = x * y
 x /= y; // x = x / y
+```
+
+## Funções
+Uma função é um bloco de código que pode ser executado repetidamente. Ela pode receber parâmetros e retornar um valor.
+
+```javascript
+function saudacao(nome) {
+  return 'Olá, ' + nome + '!';
+}
+
+console.log(saudacao('Fulano')); // Olá, Fulano!
+```
+
+### Flexibilidade de parametros
+Uma função pode receber qualquer quantidade de parametros, sem resultar em erro.
+
+```javascript
+function calcularArea(largura, comprimento) {
+    var area = largura * comprimento;
+    return area;
+}
+
+//Se um dos valores não for passado, ele será considerado como undefined
+var resultado = calcularArea(10);
+console.log(resultado);//NaN - Not a Number
+
+var resultado2 = calcularArea(10, 5, 2, 3, 4);
+console.log(resultado2);//50 - O JS ignora os parametros a mais
+
+var resultado3 = calcularArea();
+console.log(resultado3);//NaN - Not a Number
+```
+
+### Funções Anônimas
+Uma função anônima é uma função sem nome. Ela pode ser atribuída a uma variável ou passada como argumento para outra função.
+
+```javascript
+var saudacao = function(nome) {
+  return 'Olá, ' + nome + '!';
+};
+
+console.log(saudacao('Fulano')); // Olá, Fulano!
+```
+
+### Funções de Callback
+Uma função de callback é uma função passada como argumento para outra função. Ela é executada após a conclusão de uma operação assíncrona.
+
+```javascript
+function algo(acao, sucesso, erro) {
+    if (acao) {
+        sucesso();
+    } else {
+        erro();
+    }
+}
+
+var sucesso = function() {
+    console.log('Ação realizada com sucesso!');
+}
+
+var erro = function() {
+    console.log('Erro ao realizar a ação!');
+}
+
+algo(true, sucesso, erro);
+```
+
+## String
+Uma string é uma sequência de caracteres. Em javascript, as strings são representadas por aspas simples ou duplas.
+
+```javascript
+var nome = 'Fulano';
+var sobrenome = "de Tal";
+```
+
+### Propriedades e Métodos
+As strings possuem várias propriedades e métodos que nos permitem manipular e formatar o texto.
+    
+```javascript
+    var texto = 'Olá, Mundo!';
+
+    console.log(texto.length); // 11
+    console.log(texto.toUpperCase()); // OLÁ, MUNDO!
+    console.log(texto.toLowerCase()); // olá, mundo!
+    console.log(texto.charAt(4)); // ,
+    console.log(texto.indexOf('Mundo')); // 5
+    console.log(texto.slice(5, 10)); // Mundo
+    console.log(texto.replace('Mundo', 'JavaScript')); // Olá, JavaScript!
+    console.log(texto.split(', ')); // ['Olá', 'Mundo!']
+```
+
+## Math
+O objeto `Math` nos fornece métodos e constantes para realizar operações matemáticas.
+
+```javascript
+console.log(Math.PI); // 3.141592653589793
+console.log(Math.round(4.7)); // 5
+console.log(Math.floor(4.7)); // 4 - Arredonda para baixo
+console.log(Math.ceil(4.3)); // 5 - Arredonda para cima
+console.log(Math.min(10, 5, 8)); // 5
+console.log(Math.max(10, 5, 8)); // 10
+console.log(Math.random()); // Número aleatório entre 0 e 1
+```
+
+## Date
+O objeto `Date` nos permite trabalhar com datas e horas em javascript.
+
+```javascript
+var data = new Date();
+console.log(data); // Data e hora atuais
+
+var data = new Date('2021-01-01');
+console.log(data); // Data específica
+
+var data = new Date(2021, 0, 1);
+console.log(data); // Data específica
+
+var data = new Date();
+
+var dia = data.getDate();
+var mes = data.getMonth() + 1;
+var ano = data.getFullYear();
+
+console.log(dia + '/' + mes + '/' + ano); // Data formatada
 ```

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções</title>
+
+    <script>
+
+        //Função simples
+        console.log("Função simples: ");
+        function calcularArea(largura, comprimento) {
+
+            var area = largura * comprimento;
+
+            return area;
+        }
+
+        var resultado = calcularArea(10, 5);
+        console.log(resultado);
+
+        //Flexibilidade de parametros
+        console.log("Flexibilidade de parametros: ");
+        
+        var resultado2 = calcularArea(10);
+        console.log(resultado2);//NaN - Not a Number
+        var resultado3 = calcularArea(10, 5, 2, 3, 4);
+        console.log(resultado3);//50 - O JS ignora os parametros a mais
+        var resultado4 = calcularArea();
+        console.log(resultado4);//NaN - Not a Number
+
+        // Funções Anônimas e wrapper
+        console.log("Funções Anônimas e wrapper: ");
+        
+        var calcularArea2 = function(largura, comprimento) {
+            return largura * comprimento;
+        }
+
+        console.log(calcularArea2(10, 5));
+
+        // Funções de callback
+        console.log("Funções de callback: ");
+
+        function calcularArea3(largura, comprimento, callback) {
+            var area = largura * comprimento;
+            return callback(area);
+        }
+
+        var resultado5 = calcularArea3(10, 5, function(area) {
+            return area * 2;
+        });
+
+        console.log(resultado5);
+
+        function algo(acao, sucesso, erro) {
+            if (acao) {
+                sucesso();
+            } else {
+                erro();
+            }
+        }
+
+        var sucesso = function() {
+            console.log('Ação realizada com sucesso!');
+        }
+
+        var erro = function() {
+            console.log('Erro ao realizar a ação!');
+        }
+
+        algo(false, sucesso, erro);
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
