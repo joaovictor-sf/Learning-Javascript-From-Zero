@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript</title>
+        <script>
+            function alerta() {
+                alert('Hola Mundo');
+            }
+        </script>
+    </head>
+    <body >
+        <h1>Mouse</h1>
+        <button onclick="alerta()" onmouseenter="alerta()" style="background-color: #ccc; height: 150px; width: 150px;">Click</button>
+
+        <hr>
+
+        <h1>Teclado</h1>
+
+        <input type="text" onkeypress="alerta()" onkeydown="alerta()" onkeyup="alerta()">
+
+        <hr>
+
+        <h1>Janela</h1>
+
+        <button onclick="window.open('https://www.google.com.br', '_blank')">Abrir Google</button>
+        <button onclick="window.close()">Fechar</button>
+
+        <hr>
+
+        <h1>Formulário</h1>
+
+        <form action="">
+            <input type="text" onfocus="alerta()"
+            onblur="alerta()">
+            <input type="submit" value="Enviar" onsubmit="alerta()">
+        </form>
+    </body>
+</html>

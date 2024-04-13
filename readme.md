@@ -36,6 +36,11 @@ Sinta-se à vontade para contribuir com este repositório, adicionando exemplos 
     - [Propriedades e Métodos](#propriedades-e-métodos)
 - [Math](#math)
 - [Date](#date)
+- [Eventos](#eventos)
+    - [Eventos de Mouse](#eventos-de-mouse)
+    - [Eventos de Teclado](#eventos-de-teclado)
+    - [Eventos de Janela](#eventos-de-janela)
+    - [Eventos de Formulário](#eventos-de-formulário)
 
 ## Adicionando javascript a um documento HTML
 Existe três formas de adicionar javascript a um documento HTML:
@@ -448,3 +453,43 @@ var ano = data.getFullYear();
 
 console.log(dia + '/' + mes + '/' + ano); // Data formatada
 ```
+
+## Eventos
+Os eventos são ações que ocorrem em um documento HTML e que podem ser manipulados com javascript.
+
+```html
+<button onclick="alert('Olá Mundo!')">Clique aqui</button>
+```
+
+Os eventos podem ser adicionados diretamente no HTML ou através do javascript.
+
+```javascript
+var botao = document.getElementById('botao');
+
+botao.addEventListener('click', function() {
+  alert('Olá Mundo!');
+});
+```
+### Eventos de Mouse
+- `click`: Ocorre quando um elemento é clicado.
+- `mouseover`: Ocorre quando o ponteiro do mouse é movido sobre um elemento.
+- `mouseout`: Ocorre quando o ponteiro do mouse é movido para fora de um elemento.
+- `mousedown`: Ocorre quando um botão do mouse é pressionado sobre um elemento.
+- `mouseup`: Ocorre quando um botão do mouse é liberado sobre um elemento.
+
+### Eventos de Teclado
+- `keydown`: Ocorre quando uma tecla é pressionada.
+- `keyup`: Ocorre quando uma tecla é liberada.
+- `keypress`: Ocorre quando uma tecla é pressionada e liberada.
+
+### Eventos de Janela
+- `load`: Ocorre quando um documento é carregado.
+- `resize`: Ocorre quando a janela do navegador é redimensionada.
+- `scroll`: Ocorre quando a janela do navegador é rolada.
+- `unload`: Ocorre quando um documento é descarregado.
+
+### Eventos de Formulário
+- `submit`: Ocorre quando um formulário é enviado.
+- `change`: Ocorre quando o valor de um elemento é alterado.
+- `focus`: Ocorre quando um elemento recebe o foco.
+- `blur`: Ocorre quando um elemento perde o foco.
