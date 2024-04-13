@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <input type="text" id="entrada" placeholder="Digite um caracter aqui" onkeyup="distrubiuCaracter()">
+
+    <br><br>
+
+    <span>Letras:</span>
+    <input type="text" id="letra" disabled>
+
+    <span>Números</span>
+    <input type="text" id="numero" disabled>
+
+    <br><br>
+
+
+    <script>
+        function distrubiuCaracter() {
+            let char = document.getElementById('entrada').value;
+            document.getElementById('entrada').value = '';
+            
+            if(char.match(/[a-zA-Z]/)) {
+                document.getElementById('letra').value += char;
+            } else if(char.match(/[0-9]/)) {
+                document.getElementById('numero').value = char;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h3>Manipulando Estilo</h3>
+
+    <button type="button" onclick="modificar('#FF0000')">Vermelho</button>
+    <button type="button" onclick="modificar('green', '200px')">Verde</button>
+    <button type="button" onclick="modificar('blue', undefined, '200px')">Azul</button>
+
+    <br><hr><br>
+
+    <div id="quadrado" style="width: 100px; height: 100px; border: 1px solid black;"></div>
+
+    <script>
+        function modificar(cor, w, h) {
+            var quadrado = document.getElementById('quadrado');
+            quadrado.style.backgroundColor = cor;
+            if (w) {
+                quadrado.style.width = w;
+                quadrado.style.height = '100px';
+            }
+            if (h) {
+                quadrado.style.height = h;
+                quadrado.style.width = '100px';
+            }
+            if (!w && !h) {
+                quadrado.style.width = '100px';
+                quadrado.style.height = '100px';
+            }
+        }
+    </script>
+</body>
+</html>

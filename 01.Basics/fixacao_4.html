@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <!-- 
+    No evento de foco modifique o background do input para amarelo.
+    • Quando o campo perder o foco, recupere o seu respectivo valor e:
+    
+    o Caso o conteúdo contido no campo tenha menos de 3 caracteres o mesmo 
+    deve ter seu background alterado para vermelho.
+    
+    o Caso o conteúdo contido no campo tenha 3 caracteres ou mais o background deve ser alterado para verde 
+    -->
+    <input type="text" onfocus="metodo()" id="algo">
+
+    <script>
+        function metodo() {
+            var input = document.getElementById('algo');
+            input.style.backgroundColor = 'yellow';
+            input.onblur = function() {
+                if (input.value.length < 3) {
+                    input.style.backgroundColor = 'red';
+                } else {
+                    input.style.backgroundColor = 'green';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

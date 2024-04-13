@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        let num1 = prompt("Digite o primeiro número: ");
+        num1 = parseInt(num1);
+        let operacao = prompt("Digite a operação desejada(soma ou subtração): ");
+        let num2 = prompt("Digite o segundo número: ");
+        num2 = parseInt(num2);
+
+        //EM UMA FUNÇÃO
+        function calculo(num1, num2, operacao) {
+            let igual;
+            if (operacao == "soma") {
+                igual = num1 + num2;
+                return igual;
+            } else if (operacao == "subtração") {
+                igual = num1 - num2;
+                return igual;
+            } else {
+                return "Operação inválida";
+            }
+        }
+
+        let resultado = calculo(num1, num2, operacao);
+
+        document.write("“O resultado é: " + resultado);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

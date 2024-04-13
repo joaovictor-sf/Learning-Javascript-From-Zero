@@ -493,3 +493,44 @@ botao.addEventListener('click', function() {
 - `change`: Ocorre quando o valor de um elemento é alterado.
 - `focus`: Ocorre quando um elemento recebe o foco.
 - `blur`: Ocorre quando um elemento perde o foco.
+
+## DOM
+O DOM (Document Object Model) é uma interface de programação que representa a estrutura de um documento HTML como uma árvore de objetos.
+
+```html
+  <h1 id="titulo">Olá, Mundo!</h1>
+  <p class="paragrafo">Este é um parágrafo.</p>
+  <button onclick="clicar()">Clique aqui</button>
+
+  <script>
+    function clicar() {
+      var titulo = document.getElementById('titulo');
+      titulo.innerHTML = 'Olá, JavaScript!';
+      
+      var paragrafo = document.getElementsByClassName('paragrafo');
+      paragrafo[0].innerHTML = 'Este é um novo parágrafo.';
+    }
+  </script>
+```
+
+O DOM nos permite acessar e manipular elementos HTML de forma dinâmica. Podemos adicionar, remover e modificar elementos, atributos e estilos.
+
+**Pegar Elementos**:
+- `getElementById()`: Retorna o elemento com o ID especificado.
+- `getElementsByClassName()`: Retorna uma coleção de elementos com a classe especificada.
+- `getElementsByTagName()`: Retorna uma coleção de elementos com a tag especificada.
+- `querySelector()`: Retorna o primeiro elemento que corresponde ao seletor especificado.
+- `querySelectorAll()`: Retorna todos os elementos que correspondem ao seletor especificado.
+- `getElementsByName()`: Retorna uma coleção de elementos com o atributo `name` especificado.
+
+**Modificar Elementos:**
+- `innerHTML`: Define ou retorna o conteúdo HTML de um elemento.
+- `innerText`: Define ou retorna o texto de um elemento.
+- `setAttribute()`: Define o valor de um atributo de um elemento.
+- `removeAttribute()`: Remove um atributo de um elemento.
+- `style`: Define ou retorna o estilo de um elemento.
+
+**Adicionar e Remover Elementos:**
+- `createElement()`: Cria um novo elemento.
+- `appendChild()`: Adiciona um novo elemento como filho de outro elemento.
+- `removeChild()`: Remove um elemento filho de outro elemento.

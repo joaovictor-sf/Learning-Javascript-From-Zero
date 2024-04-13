@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+
+    <style>
+        .estilo1 {
+            background-color: red;
+            color: white;
+            font-size: 20px;
+            padding: 10px;
+        }
+        .estilo2 {
+            background-color: blue;
+            color: white;
+            font-size: 20px;
+            padding: 10px;
+        }
+        .estilo3 {
+            background-color: green;
+            color: white;
+            font-size: 20px;
+            padding: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <h3>Manipulando a Classe do elemento</h3>
+
+    <div id="elemento" class="estilo1">Elemento</div>
+
+    <hr>
+
+    <button type="button" onclick="modificar()">Aplicar classe</button>
+    
+    <script>
+       function modificar() {
+            var elemento = document.getElementById('elemento');
+            if (elemento.className == 'estilo2') {
+                elemento.className = 'estilo3';
+            } else if (elemento.className == 'estilo3') {
+                elemento.className = 'estilo1';
+            } else {
+                elemento.className = 'estilo2';
+            }
+
+       }
+    </script>
+</body>
+</html>
