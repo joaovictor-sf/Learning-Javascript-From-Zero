@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var lista = [];
+        lista['nomes'] = ['João', 'Maria', 'José'];
+        lista['idades'] = [20, 30, 40];
+        console.log(lista);
+        console.log(lista['nomes']);
+        console.log(lista['nomes'][0]);
+        console.log(lista['nomes'][1]);
+        console.log(lista['nomes'][2]);
+        console.log(lista['idades']);
+        console.log(lista['idades'][0]);
+        console.log(lista['idades'][1]);
+        console.log(lista['idades'][2]);
+
+        console.log(lista['nomes'].join(', '));
+
+        //ORDENAÇÃO
+        console.log(lista['nomes'].sort());
+        console.log(lista['nomes'].reverse());
+
+        var lista2 = [23, 5, 2, 37, 81, 34, 56];
+        console.log(lista2);
+        console.log(lista2.sort(ordemCrescente));
+
+        //Tambem funciona com strings
+        function ordemCrescente(a, b) {
+            return a - b;
+        }
+        
+    </script>
+</body>
+</html>

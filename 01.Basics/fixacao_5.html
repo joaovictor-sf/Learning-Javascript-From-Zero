@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <input type="text" id="texto">
+    <button type="button" onclick="adicionar()">Adicionar</button>
+    <button type="button" onclick="ordenar()">Ordenar</button>
+
+    <script>
+        var objetos = Array('Cadeira', 'Impressora', 'Garfo');
+
+        function adicionar() {
+            var texto = document.getElementById('texto').value;
+            if (texto == '') {
+                alert('"Informe um valor válido');
+                return;
+            }else if(objetos.indexOf(texto) != -1){
+                alert('"Objeto já foi adicionado');
+                return;
+            }else{
+                objetos.push(texto);
+                console.log(objetos);
+                document.getElementById('texto').value = '';
+            }
+        }
+
+        function ordenar() {
+            objetos.sort();
+            console.log(objetos);
+            //O sort é case sensitive, então para ordenar corretamente, é necessário passar uma função de comparação
+            objetos.sort(function(a, b){
+                return a.localeCompare(b);
+            });
+            console.log(objetos);
+        }
+    </script>
+</body>
+</html>

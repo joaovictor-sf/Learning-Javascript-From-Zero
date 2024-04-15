@@ -534,3 +534,64 @@ O DOM nos permite acessar e manipular elementos HTML de forma dinâmica. Podemos
 - `createElement()`: Cria um novo elemento.
 - `appendChild()`: Adiciona um novo elemento como filho de outro elemento.
 - `removeChild()`: Remove um elemento filho de outro elemento.
+
+## Arrays
+Um array é uma coleção de elementos que podem ser acessados por um índice.
+
+```javascript
+var frutas = ['Maçã', 'Banana', 'Morango'];
+
+console.log(frutas[0]); // Maçã
+console.log(frutas[1]); // Banana
+console.log(frutas[2]); // Morango
+```
+
+Você tambem pode criar arrays vazios:
+```javascript
+var frutas = [];
+```
+
+### Métodos de Array
+Os arrays possuem vários métodos que nos permitem manipular e percorrer os elementos.
+
+```javascript
+var frutas = ['Maçã', 'Banana', 'Morango'];
+
+console.log(frutas.length); // Mostra a quantidades de elementos - 3
+console.log(frutas.join(', ')); // Devolve uma string com os elementos separados pelo o que estiver no paragrafo - Maçã, Banana, Morango
+console.log(frutas.push('Laranja')); // Adiciona um elemento no final
+console.log(frutas.pop()); // Remove um elemento do final
+console.log(frutas.shift()); // Remove um elemento do início
+console.log(frutas.unshift('Uva')); // Adiciona um elemento no início
+console.log(frutas.slice(1, 2)); // Retorna um subarray
+console.log(frutas.splice(1, 1, 'Pera')); // Remove e/ou adiciona elementos
+console.log(frutas.reverse()); // Inverte a ordem dos elementos
+console.log(frutas.sort()); // Ordena os elementos
+console.log(frutas.indexOf('Banana')); // Retorna o índice de um elemento
+console.log(frutas.includes('Banana')); // Retorna true se um elemento existe
+```
+
+**Ordenação de Números**:
+Tambem funcionará se os numeros estiverem em string.
+```javascript
+var numeros = [10, 5, 8, 2, 3];
+
+console.log(numeros.sort(function(a, b) {
+  return a - b;
+})); // [2, 3, 5, 8, 10]
+```
+### Arrays Multidimensionais
+Um array multidimensional é um array que contém outros arrays.
+
+```javascript
+var matriz = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+
+console.log(matriz[0][0]); // 1
+console.log(matriz[1][1]); // 5
+console.log(matriz[2][2]); // 9
+```
+
