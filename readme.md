@@ -32,6 +32,7 @@ Sinta-se à vontade para contribuir com este repositório, adicionando exemplos 
     - [Flexibilidade de parametros](#flexibilidade-de-parametros)
     - [Funções Anônimas](#funções-anônimas)
     - [Funções de Callback](#funções-de-callback)
+    - [Funções com parametros variaveis](#funções-com-parametros-variaveis)
 - [String](#string)
     - [Propriedades e Métodos](#propriedades-e-métodos)
 - [Math](#math)
@@ -41,6 +42,22 @@ Sinta-se à vontade para contribuir com este repositório, adicionando exemplos 
     - [Eventos de Teclado](#eventos-de-teclado)
     - [Eventos de Janela](#eventos-de-janela)
     - [Eventos de Formulário](#eventos-de-formulário)
+- [DOM](#dom)
+    - [Pegar Elementos](#pegar-elementos)
+    - [Modificar Elementos](#modificar-elementos)
+    - [Adicionar e Remover Elementos](#adicionar-e-remover-elementos)
+- [Arrays](#arrays)
+    - [Métodos de Array](#métodos-de-array)
+    - [Ordenação de Números](#ordenação-de-números)
+    - [Ordenação com caracteres maiúsculos e minúsculos](#ordenação-com-caracteres-maiúsculos-e-minúsculos)
+    - [Arrays Multidimensionais](#arrays-multidimensionais)
+- [Loops](#loops)
+    - [While](#while)
+    - [Do/While](#dowhile)
+    - [For](#for)
+    - [For/In](#forin)
+    - [For/Of](#forof)
+    - [forEach](#foreach)
 
 ## Adicionando javascript a um documento HTML
 Existe três formas de adicionar javascript a um documento HTML:
@@ -395,6 +412,23 @@ var erro = function() {
 algo(true, sucesso, erro);
 ```
 
+### Funções com parametros variaveis
+É possivel passar uma quantidade variavel de parametros para uma função.
+
+```javascript
+function somar() {
+    var total = 0;
+    for (var i = 0; i < arguments.length; i++) {
+        total += arguments[i];
+    }
+    return total;
+}
+
+console.log(somar(1, 2, 3, 4, 5)); // 15
+```
+
+O arguments é um objeto semelhante a um array que contém os valores dos argumentos passados para a função.
+
 ## String
 Uma string é uma sequência de caracteres. Em javascript, as strings são representadas por aspas simples ou duplas.
 
@@ -580,6 +614,17 @@ console.log(numeros.sort(function(a, b) {
   return a - b;
 })); // [2, 3, 5, 8, 10]
 ```
+
+**Ordenação com caracteres maiúsculos e minúsculos**:
+O método 'sort()' ordena os elementos de um array com base na ordem de classificação Unicode. Para ordenar os elementos de um array de strings de forma sensível a maiúsculas e minúsculas, podemos usar a função 'localeCompare()'.
+```javascript
+var frutas = ['Maçã', 'Banana', 'abacaxi'];
+
+console.log(frutas.sort(function(a, b) {
+  return a.localeCompare(b);
+})); // ['abacaxi', 'Banana', 'Maçã']
+```
+
 ### Arrays Multidimensionais
 Um array multidimensional é um array que contém outros arrays.
 
@@ -595,3 +640,92 @@ console.log(matriz[1][1]); // 5
 console.log(matriz[2][2]); // 9
 ```
 
+## Loops
+Os loops são utilizados para repetir um bloco de código várias vezes.
+
+**Informações importantes:**
+- Loops devem ter uma condição de parada para evitar loops infinitos.
+- É possível interromper um loop com a palavra-chave `break`.
+- É possível pular uma iteração de um loop com a palavra-chave `continue`.
+
+### While
+O loop `while` executa um bloco de código enquanto a condição especificada for verdadeira.
+
+```javascript
+var i = 0;
+
+while (i < 5) {
+  console.log(i);
+  i++;
+}
+```
+
+### Do/While
+O loop `do/while` executa um bloco de código uma vez e depois repete o bloco enquanto a condição especificada for verdadeira.
+
+```javascript
+var i = 5;
+
+do {
+  console.log(i);//5
+  i++;
+} while (i < 5);
+```
+
+Isso é útil quando queremos que o bloco de código seja executado pelo menos uma vez, mesmo que a condição seja falsa.
+
+### For
+O loop `for` executa um bloco de código várias vezes, com base em uma condição de inicialização, uma condição de parada e um incremento.
+
+```javascript
+for (var i = 0; i < 5; i++) {
+  console.log(i);
+}
+```
+
+A estrutura do loop `for` é composta por três partes:
+1. **Inicialização**: Inicializa a variável de controle do loop.
+2. **Condição de Parada**: Define a condição para continuar ou interromper o loop.
+3. **Incremento**: Incrementa ou decrementa a variável de controle do loop.
+
+### For/In
+O loop `for/in` é utilizado para percorrer as propriedades de um objeto.
+
+```javascript
+var pessoa = {nome: 'Fulano', idade: 30};
+
+for (var propriedade in pessoa) {
+  console.log(propriedade + ': ' + pessoa[propriedade]);//nome: Fulano, idade: 30
+}
+```
+
+### For/Of
+O loop `for/of` é utilizado para percorrer os elementos de um array.
+
+```javascript
+var frutas = ['Maçã', 'Banana', 'Morango'];
+
+for (var fruta of frutas) {
+  console.log(fruta);//Maçã, Banana, Morango
+}
+```
+
+### forEach
+O método `forEach` é utilizado para percorrer os elementos de um array.
+
+```javascript
+var frutas = ['Maçã', 'Banana', 'Morango'];
+
+frutas.forEach(function(fruta) {
+  console.log(fruta);//Maçã, Banana, Morango
+});
+
+// Outra forma de fazer
+frutas.forEach(function(valor, indice, array) {
+    console.log(valor + '-' + indice + '-' + array);
+    //Maçã-0-Maçã,Banana,Morango
+    //Banana-1-Maçã,Banana,Morango
+    //Morango-2-Maçã,Banana,Morango
+});
+
+```
