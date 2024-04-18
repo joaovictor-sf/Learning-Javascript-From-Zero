@@ -12,46 +12,46 @@ Sinta-se à vontade para contribuir com este repositório, adicionando exemplos 
 
 ## Sumário
 
-- [Adicionando javascript a um documento HTML](#adicionando-javascript-a-um-documento-html)
-- [Comentários](#comentários)
-- [Variáveis](#variáveis)
+1. [Adicionando javascript a um documento HTML](#adicionando-javascript-a-um-documento-html)
+2. [Comentários](#comentários)
+3. [Variáveis](#variáveis)
     - [Tipos de Dados](#tipos-de-dados)
-- [Alertas](#alertas)
-- [Fazer o javascript interagir com o HTML](#fazer-o-javascript-interagir-com-o-html)
-- [Console](#console)
-- [Concatenação](#concatenação)
-- [prompt](#prompt)
-- [If/else](#ifelse)
+4. [Alertas](#alertas)
+5. [Fazer o javascript interagir com o HTML](#fazer-o-javascript-interagir-com-o-html)
+6. [Console](#console)
+7. [Concatenação](#concatenação)
+8. [prompt](#prompt)
+9. [If/else](#ifelse)
     - [Operadores de Comparação](#operadores-de-comparação)
     - [Operadores Lógicos](#operadores-lógicos)
     - [Operador Ternário](#operador-ternário)
     - [Switch](#switch)
-- [Casting](#casting)
-- [Operadores Aritméticos](#operadores-aritméticos)
-- [Funções](#funções)
+10. [Casting](#casting)
+11. [Operadores Aritméticos](#operadores-aritméticos)
+12. [Funções](#funções)
     - [Flexibilidade de parametros](#flexibilidade-de-parametros)
     - [Funções Anônimas](#funções-anônimas)
     - [Funções de Callback](#funções-de-callback)
     - [Funções com parametros variaveis](#funções-com-parametros-variaveis)
-- [String](#string)
+13. [String](#string)
     - [Propriedades e Métodos](#propriedades-e-métodos)
-- [Math](#math)
-- [Date](#date)
-- [Eventos](#eventos)
+14. [Math](#math)
+15. [Date](#date)
+16. [Eventos](#eventos)
     - [Eventos de Mouse](#eventos-de-mouse)
     - [Eventos de Teclado](#eventos-de-teclado)
     - [Eventos de Janela](#eventos-de-janela)
     - [Eventos de Formulário](#eventos-de-formulário)
-- [DOM](#dom)
+17. [DOM](#dom)
     - [Pegar Elementos](#pegar-elementos)
     - [Modificar Elementos](#modificar-elementos)
     - [Adicionar e Remover Elementos](#adicionar-e-remover-elementos)
-- [Arrays](#arrays)
+18. [Arrays](#arrays)
     - [Métodos de Array](#métodos-de-array)
     - [Ordenação de Números](#ordenação-de-números)
     - [Ordenação com caracteres maiúsculos e minúsculos](#ordenação-com-caracteres-maiúsculos-e-minúsculos)
     - [Arrays Multidimensionais](#arrays-multidimensionais)
-- [Loops](#loops)
+19 [Loops](#loops)
     - [While](#while)
     - [Do/While](#dowhile)
     - [For](#for)
@@ -729,3 +729,21 @@ frutas.forEach(function(valor, indice, array) {
 });
 
 ```
+
+## Tratamento de Erros
+O tratamento de erros é utilizado para lidar com exceções e evitar que o programa pare de funcionar.
+
+```javascript
+try {
+  // Código que pode gerar um erro
+  throw 'Erro';
+} catch (erro) {
+  // Código que trata o erro
+  console.log(erro);//'Erro'
+} finally {
+  // Código que é executado sempre
+  console.log('Fim do programa');
+}
+```
+
+O bloco `try` é utilizado para envolver o código que pode gerar um erro. O bloco `catch` é utilizado para tratar o erro. O bloco `finally` é utilizado para executar um código após o tratamento do erro.
