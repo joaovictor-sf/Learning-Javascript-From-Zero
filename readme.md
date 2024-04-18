@@ -58,6 +58,12 @@ Sinta-se à vontade para contribuir com este repositório, adicionando exemplos 
     - [For/In](#forin)
     - [For/Of](#forof)
     - [forEach](#foreach)
+20. [Tratamento de Erros](#tratamento-de-erros)
+21. [BOM (Browser Object Model)](#bom-browser-object-model)
+    - [Window](#window)
+    - [Screen](#screen)
+    - [Location](#location)
+    - [Outros métodos](#outros-métodos)
 
 ## Adicionando javascript a um documento HTML
 Existe três formas de adicionar javascript a um documento HTML:
@@ -747,3 +753,118 @@ try {
 ```
 
 O bloco `try` é utilizado para envolver o código que pode gerar um erro. O bloco `catch` é utilizado para tratar o erro. O bloco `finally` é utilizado para executar um código após o tratamento do erro.
+
+## BOM (Browser Object Model)
+O BOM (Browser Object Model) é uma interface de programação que representa o navegador como um objeto.
+
+```javascript
+console.log(window.innerWidth); // Largura da janela do navegador
+console.log(window.innerHeight); // Altura da janela do navegador
+console.log(window.location.href); // URL da página
+console.log(window.navigator.userAgent); // Informações do navegador
+```
+
+O BOM nos permite acessar e manipular várias propriedades e métodos do navegador, como a janela, a localização e o histórico de navegação.
+
+Para mais informações, você pode acessar o [W3Schools](https://www.w3schools.com/js/js_window.asp).
+
+### Window
+O objeto `window` representa a janela do navegador.
+
+```javascript
+window.alert('Olá Mundo!'); // Alerta
+window.confirm('Você deseja continuar?'); // Confirmação
+window.prompt('Qual é o seu nome?'); // Entrada
+```
+
+Você pode usar o `window` ou não, pois ele é o objeto global.
+
+### Screen
+O objeto `screen` representa a tela do dispositivo.
+
+```javascript
+console.log(screen.width); // Largura da tela
+console.log(screen.height); // Altura da tela
+console.log(screen.availWidth); // Largura disponível
+console.log(screen.availHeight); // Altura disponível
+```
+
+### Location
+O objeto `location` representa a URL da página.
+
+```javascript
+console.log(location.href); // URL da página
+console.log(location.hostname); // Nome do host
+console.log(location.pathname); // Caminho da página
+console.log(location.protocol); // Protocolo da página
+```
+
+### Outros métodos
+- console.log(window); Retorna o objeto window.
+- console.log(window.innerHeight); Retorna a altura da janela do navegador.
+- console.log(window.innerWidth); Retorna a largura da janela do navegador.
+- console.log(window.location); Retorna o objeto location. O objeto location contém informações sobre a URL da página
+- console.log(window.location.href); Retorna a URL da página.
+- console.log(window.location.hostname); Retorna o nome do host da página.
+- console.log(window.location.pathname); Retorna o caminho da página.
+- console.log(window.location.protocol); Retorna o protocolo da página.
+- console.log(window.location.search); Retorna a parte da URL que contém a query string.
+- console.log(window.location.hash); Retorna a parte da URL que contém o hash.
+- console.log(window.location.assign('https://www.google.com')); Redireciona para outra página.
+- console.log(window.location.reload()); Recarrega a página.
+- console.log(window.history); Retorna o objeto history. O objeto history contém o histórico de navegação do navegador.
+- console.log(window.history.back()); Navega para a página anterior.
+- console.log(window.history.forward()); Navega para a próxima página.
+- console.log(window.history.go(2)); Navega para uma página específica.
+- console.log(window.navigator); Retorna o objeto navigator. O objeto navigator contém informações sobre o navegador.
+- console.log(window.navigator.appCodeName); Retorna o nome do código do navegador.
+- console.log(window.navigator.appName); Retorna o nome do navegador.
+- console.log(window.navigator.appVersion); Retorna a versão do navegador.
+- console.log(window.navigator.cookieEnabled); Retorna true se os cookies estiverem habilitados.
+- console.log(window.navigator.geolocation); Retorna o objeto geolocation. O objeto geolocation é usado para obter a localização do usuário.
+- console.log(window.navigator.language); Retorna o idioma do navegador.
+- console.log(window.navigator.onLine); Retorna true se o navegador estiver online.
+- console.log(window.navigator.platform); Retorna a plataforma do navegador.
+- console.log(window.navigator.product); Retorna o nome do produto do navegador.
+- console.log(window.navigator.userAgent); Retorna o agente do usuário do navegador.
+- console.log(window.navigator.vendor); Retorna o fornecedor do navegador.
+- console.log(window.navigator.vendorSub); Retorna a sub-string do fornecedor do navegador.
+- console.log(window.screen); Retorna o objeto screen. O objeto screen contém informações sobre a tela do usuário.
+- console.log(window.screen.availHeight); Retorna a altura disponível da tela.
+- console.log(window.screen.availWidth); Retorna a largura disponível da tela.
+- console.log(window.screen.colorDepth); Retorna a profundidade de cor da tela.
+- console.log(window.screen.height); Retorna a altura total da tela.
+- console.log(window.screen.pixelDepth); Retorna a profundidade de pixel da tela.
+- console.log(window.screen.width); Retorna a largura total da tela.
+- console.log(window.document); Retorna o objeto document. O objeto document representa o documento HTML.
+- console.log(window.document.body); Retorna o elemento body do documento.
+- console.log(window.document.doctype); Retorna o tipo de documento.
+- console.log(window.document.documentElement); Retorna o elemento raiz do documento.
+- console.log(window.document.head); Retorna o elemento head do documento.
+- console.log(window.document.title); Retorna o título do documento.
+- console.log(window.document.URL); Retorna a URL do documento.
+- console.log(window.document.links); Retorna uma coleção de todos os links no documento.
+- console.log(window.document.images); Retorna uma coleção de todas as imagens no documento.
+- console.log(window.document.scripts); Retorna uma coleção de todos os scripts no documento.
+- console.log(window.document.forms); Retorna uma coleção de todos os formulários no documento.
+- console.log(window.document.anchors); Retorna uma coleção de todos os âncoras no documento.
+- console.log(window.document.getElementById('test')); Retorna o elemento com o ID especificado.
+- console.log(window.document.getElementsByClassName('test')); Retorna uma coleção de todos os elementos com a classe especificada.
+- console.log(window.document.getElementsByTagName('p')); Retorna uma coleção de todos os elementos com a tag especificada.
+- console.log(window.document.getElementsByName('test')); Retorna uma coleção de todos os elementos com o nome especificado.
+- console.log(window.document.querySelector('.test')); Retorna o primeiro elemento que corresponde ao seletor especificado.
+- console.log(window.document.querySelectorAll('.test')); Retorna uma coleção de todos os elementos que correspondem ao seletor especificado.
+- console.log(window.document.createElement('div')); Cria um novo elemento div.
+- console.log(window.document.createTextNode('Hello World')); Cria um novo nó de texto.
+- console.log(window.document.getElementById('test').innerHTML = 'Hello World'); Define o HTML interno do elemento com o ID especificado.
+- console.log(window.document.getElementById('test').innerText = 'Hello World'); Define o texto interno do elemento com o ID especificado.
+- console.log(window.document.getElementById('test').style.color = 'red'); Define a cor do texto do elemento com o ID especificado.
+- console.log(window.document.getElementById('test').style.backgroundColor = 'black'); Define a cor de fundo do elemento com o ID especificado.
+- console.log(window.document.getElementById('test').style.fontSize = '24px'); Define o tamanho da fonte do elemento com o ID especificado.
+- console.log(window.document.getElementById('test').style.fontWeight = 'bold'); Define o peso da fonte do elemento com o ID especificado.
+- console.log(window.document.getElementById('test').style.padding = '10px'); Define o padding do elemento com o ID especificado.
+- console.log(window.document.getElementById('test').style.margin = '10px'); Define a margem do elemento com o ID especificado.
+- console.log(window.document.getElementById('test').style.border = '1px solid red'); Define a borda do elemento com o ID especificado.
+- console.log(window.document.getElementById('test').style.borderRadius = '5px'); Define o raio da borda do elemento com o ID especificado.
+- console.log(window.document.getElementById('test').style.boxShadow = '5px 5px 5px #000'); Define a sombra da caixa do elemento com o ID especificado.
+- console.log(window.document.getElementById('test').style.textAlign = 'center'); Define o alinhamento do texto do elemento com o ID especificado.
