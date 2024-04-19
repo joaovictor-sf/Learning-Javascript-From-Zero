@@ -33,6 +33,7 @@ Sinta-se à vontade para contribuir com este repositório, adicionando exemplos 
     - [Funções Anônimas](#funções-anônimas)
     - [Funções de Callback](#funções-de-callback)
     - [Funções com parametros variaveis](#funções-com-parametros-variaveis)
+    - [Arrow Functions](#arrow-functions)
 13. [String](#string)
     - [Propriedades e Métodos](#propriedades-e-métodos)
 14. [Math](#math)
@@ -434,6 +435,29 @@ console.log(somar(1, 2, 3, 4, 5)); // 15
 ```
 
 O arguments é um objeto semelhante a um array que contém os valores dos argumentos passados para a função.
+
+### Arrow Functions
+As arrow functions são uma forma mais curta de escrever funções em javascript.
+
+```javascript
+var saudacao = (nome) => {
+  return 'Olá, ' + nome + '!';
+};
+
+console.log(saudacao('Fulano')); // Olá, Fulano!
+```
+
+Você pode omitir as chaves e a palavra-chave `return` se a função tiver apenas uma linha.
+
+```javascript
+var saudacao = (nome) => 'Olá, ' + nome + '!';
+```
+
+Você pode omitir os parênteses se a função tiver apenas um parâmetro.
+
+```javascript
+var saudacao = nome => 'Olá, ' + nome + '!';
+```
 
 ## String
 Uma string é uma sequência de caracteres. Em javascript, as strings são representadas por aspas simples ou duplas.

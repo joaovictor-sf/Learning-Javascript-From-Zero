@@ -10,8 +10,6 @@ function adjustGameAreaSize() {
 adjustGameAreaSize();
 
 //Target position
-console.log(height, width);
-
 let positionX;
 let positionY;
 
@@ -25,39 +23,43 @@ function randomPosition() {
     if (positionY > height - 90) {
         positionY = height - 90;
     }
-
-    console.log(positionX, positionY);
 }
 
-randomPosition();
-
-//Target size
-let size = Math.floor(Math.random() * 3) + 1;
-
-console.log(size);
-
-//Target side(olhando para a direita ou para a esquerda)
-let side = Math.floor(Math.random() * 2);
-
-console.log(side);
-
 //Create target
+let size;//Target size
+let side;//Target side(olhando para a direita ou para a esquerda)
 let mosca = document.createElement('img');
 mosca.src = 'image/mosca.png';
 mosca.style.position = 'absolute';
 
 function createMosca() {
-    //mosca.src = 'image/mosca.png';
+    size = Math.floor(Math.random() * 3) + 1;
+    side = Math.floor(Math.random() * 2);
+
     mosca.className = `mosca${size}`;
-    //mosca.style.position = 'absolute';
+    randomPosition()
     mosca.style.left = positionX + 'px';
     mosca.style.top = positionY + 'px';
     mosca.style.transform = side ? 'scaleX(-1)' : 'scaleX(1)';
     document.body.appendChild(mosca);
 }
 
-createMosca();
+let tentativas = 0;
+let first = 0;
+//Create tarqet every 1s
+let interval = setInterval(() => {
+    createMosca();
 
-/*setInterval(() => {
-    document.body.appendChild(mosca);
-}, 1000);*/
+    mosca.onclick = function () {
+        this.remove();
+        tentativas--;
+    }
+
+    if (tentativas > 0 && first > 0) {
+        document.getElementById(`v${tentativas}`).src = 'image/coracao_vazio.png';
+        console.log(tentativas);
+    }
+
+    tentativas++;
+    first = 1;
+}, 1000);
