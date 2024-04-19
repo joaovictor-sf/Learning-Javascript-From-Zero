@@ -11,7 +11,26 @@ let mosca;
 let tentativas;
 let first;
 
-let time;
+let time = location.search.charAt(13);
+
+let level = window.location.search.charAt(7);
+let targetTime;
+
+if (time === '1') {
+    time = 15;
+} else if (time === '2') {
+    time = 30;
+} else if (time === '3') {
+    time = 60;
+}
+
+if (level === '1') {
+    targetTime = 1500;
+} else if (level === '2') {
+    targetTime = 1000;
+} else if (level === '3') {
+    targetTime = 750;
+}
 
 //Window size
 function adjustGameAreaSize() {
@@ -53,7 +72,7 @@ function createMosca() {
 
 tentativas = 0;
 first = 0;
-//Create tarqet every 1s
+//Create tarqet
 let interval = setInterval(() => {
 
     if (tentativas >= 3){
@@ -74,18 +93,16 @@ let interval = setInterval(() => {
 
     tentativas++;
     first = 1;
-}, 1000);
+}, targetTime);
 
-time = 10;
+//Countdown
 let countDown = setInterval(() => {
 
     time--;
     document.getElementById('time').innerHTML = time + 1;
 
-    console.log(time);
     if (time < 0) {
         clearInterval(countDown);
-        //window.location.href = 'victory.html';
-        alert('Vitória');
+        window.location.href = 'victory.html';
     }
 }, 1000);
