@@ -1,7 +1,19 @@
-//Window size
 let height = 0;
 let width = 0;
 
+let positionX;
+let positionY;
+
+let size;//Target size
+let side;//Target side(olhando para a direita ou para a esquerda)
+let mosca;
+
+let tentativas;
+let first;
+
+let time;
+
+//Window size
 function adjustGameAreaSize() {
     height = window.innerHeight;
     width = window.innerWidth;
@@ -10,9 +22,6 @@ function adjustGameAreaSize() {
 adjustGameAreaSize();
 
 //Target position
-let positionX;
-let positionY;
-
 function randomPosition() {
     positionX = Math.floor(Math.random() * width);
     positionY = Math.floor(Math.random() * height);
@@ -26,9 +35,7 @@ function randomPosition() {
 }
 
 //Create target
-let size;//Target size
-let side;//Target side(olhando para a direita ou para a esquerda)
-let mosca = document.createElement('img');
+mosca = document.createElement('img');
 mosca.src = 'image/mosca.png';
 mosca.style.position = 'absolute';
 
@@ -44,11 +51,17 @@ function createMosca() {
     document.body.appendChild(mosca);
 }
 
-let tentativas = 0;
-let first = 0;
+tentativas = 0;
+first = 0;
 //Create tarqet every 1s
 let interval = setInterval(() => {
-    createMosca();
+
+    if (tentativas >= 3){
+        clearInterval(interval);
+        window.location.href = 'game_over.html';
+    }else{
+        createMosca();
+    }
 
     mosca.onclick = function () {
         this.remove();
@@ -57,9 +70,22 @@ let interval = setInterval(() => {
 
     if (tentativas > 0 && first > 0) {
         document.getElementById(`v${tentativas}`).src = 'image/coracao_vazio.png';
-        console.log(tentativas);
     }
 
     tentativas++;
     first = 1;
+}, 1000);
+
+time = 10;
+let countDown = setInterval(() => {
+
+    time--;
+    document.getElementById('time').innerHTML = time + 1;
+
+    console.log(time);
+    if (time < 0) {
+        clearInterval(countDown);
+        //window.location.href = 'victory.html';
+        alert('Vitória');
+    }
 }, 1000);
