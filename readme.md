@@ -17,54 +17,63 @@ Sinta-se à vontade para contribuir com este repositório, adicionando exemplos 
 3. [Variáveis](#variáveis)
     - [Tipos de Dados](#tipos-de-dados)
 4. [Alertas](#alertas)
-5. [Fazer o javascript interagir com o HTML](#fazer-o-javascript-interagir-com-o-html)
-6. [Console](#console)
-7. [Concatenação](#concatenação)
-8. [prompt](#prompt)
-9. [If/else](#ifelse)
+5. [Conversão de Tipos](#conversão-de-tipos)
+6. [Fazer o javascript interagir com o HTML](#fazer-o-javascript-interagir-com-o-html)
+7. [Console](#console)
+8. [Concatenação](#concatenação)
+9. [prompt](#prompt)
+10. [If/else](#ifelse)
     - [Operadores de Comparação](#operadores-de-comparação)
     - [Operadores Lógicos](#operadores-lógicos)
     - [Operador Ternário](#operador-ternário)
     - [Switch](#switch)
-10. [Casting](#casting)
-11. [Operadores Aritméticos](#operadores-aritméticos)
-12. [Funções](#funções)
+11. [Casting](#casting)
+12. [Operadores Aritméticos](#operadores-aritméticos)
+13. [Funções](#funções)
     - [Flexibilidade de parametros](#flexibilidade-de-parametros)
     - [Funções Anônimas](#funções-anônimas)
     - [Funções de Callback](#funções-de-callback)
     - [Funções com parametros variaveis](#funções-com-parametros-variaveis)
     - [Arrow Functions](#arrow-functions)
-13. [String](#string)
+14. [String](#string)
     - [Propriedades e Métodos](#propriedades-e-métodos)
-14. [Math](#math)
-15. [Date](#date)
-16. [Eventos](#eventos)
+15. [Math](#math)
+16. [Date](#date)
+17. [Eventos](#eventos)
     - [Eventos de Mouse](#eventos-de-mouse)
     - [Eventos de Teclado](#eventos-de-teclado)
     - [Eventos de Janela](#eventos-de-janela)
     - [Eventos de Formulário](#eventos-de-formulário)
-17. [DOM](#dom)
+18. [DOM](#dom)
     - [Pegar Elementos](#pegar-elementos)
     - [Modificar Elementos](#modificar-elementos)
     - [Adicionar e Remover Elementos](#adicionar-e-remover-elementos)
-18. [Arrays](#arrays)
+19. [Arrays](#arrays)
     - [Métodos de Array](#métodos-de-array)
     - [Ordenação de Números](#ordenação-de-números)
     - [Ordenação com caracteres maiúsculos e minúsculos](#ordenação-com-caracteres-maiúsculos-e-minúsculos)
     - [Arrays Multidimensionais](#arrays-multidimensionais)
-19. [Loops](#loops)
+20. [Loops](#loops)
     - [While](#while)
     - [Do/While](#dowhile)
     - [For](#for)
     - [For/In](#forin)
     - [For/Of](#forof)
     - [forEach](#foreach)
-20. [Tratamento de Erros](#tratamento-de-erros)
-21. [BOM (Browser Object Model)](#bom-browser-object-model)
+21. [Tratamento de Erros](#tratamento-de-erros)
+22. [BOM (Browser Object Model)](#bom-browser-object-model)
     - [Window](#window)
     - [Screen](#screen)
     - [Location](#location)
     - [Outros métodos](#outros-métodos)
+23. [Objeto](#objeto)
+    - [Adicionar Propriedades e Métodos](#adicionar-propriedades-e-métodos)
+    - [Modificar Propriedades e Métodos](#modificar-propriedades-e-métodos)
+    - [Objetos Aninhados](#objetos-aninhados)
+    - [Objetos Arrays](#objetos-arrays)
+    - [Propriedades e Métodos](#propriedades-e-métodos)
+    - [Construtor de Objetos](#construtor-de-objetos)
+    - [Protótipo](#protótipo)
 
 ## Adicionando javascript a um documento HTML
 Existe três formas de adicionar javascript a um documento HTML:
@@ -981,3 +990,162 @@ console.log(location.protocol); // Protocolo da página
 - console.log(window.document.getElementById('test').style.borderRadius = '5px'); Define o raio da borda do elemento com o ID especificado.
 - console.log(window.document.getElementById('test').style.boxShadow = '5px 5px 5px #000'); Define a sombra da caixa do elemento com o ID especificado.
 - console.log(window.document.getElementById('test').style.textAlign = 'center'); Define o alinhamento do texto do elemento com o ID especificado.
+
+## Objeto
+Um objeto é uma coleção de propriedades e métodos.
+
+```javascript
+var pessoa = {
+  nome: 'Fulano',
+  idade: 30,
+  isEstudante: true,
+  saudacao: function() {
+    return 'Olá, ' + this.nome + '!';
+  }
+};
+
+console.log(pessoa.nome); // Fulano
+console.log(pessoa.idade); // 30
+console.log(pessoa.isEstudante); // true
+console.log(pessoa.saudacao()); // Olá, Fulano!
+```
+
+### Adicionar Propriedades e Métodos
+Você pode adicionar propriedades e métodos a um objeto existente.
+
+```javascript
+var pessoa = {
+  nome: 'Fulano',
+  idade: 30
+};
+
+pessoa.isEstudante = true;
+pessoa.saudacao = function() {
+  return 'Olá, ' + this.nome + '!';
+};
+
+console.log(pessoa.isEstudante); // true
+console.log(pessoa.saudacao()); // Olá, Fulano!
+```
+
+### Modificar Propriedades e Métodos
+Você pode modificar propriedades e métodos de um objeto existente.
+
+```javascript
+var pessoa = {
+  nome: 'Fulano',
+  idade: 30
+};
+
+pessoa.nome = 'Ciclano';
+pessoa.idade = 25;
+
+console.log(pessoa.nome); // Ciclano
+console.log(pessoa.idade); // 25
+```
+
+### Objetos Aninhados
+Um objeto pode conter outros objetos.
+
+```javascript
+var pessoa = {
+  nome: 'Fulano',
+  endereco: {
+    rua: 'Rua A',
+    numero: 123
+  }
+};
+
+console.log(pessoa.endereco.rua); // Rua A
+console.log(pessoa.endereco.numero); // 123
+```
+
+### Objetos Arrays
+Um objeto pode conter arrays.
+
+```javascript
+var pessoa = {
+  nome: 'Fulano',
+  frutas: ['Maçã', 'Banana', 'Morango']
+};
+
+console.log(pessoa.frutas[0]); // Maçã
+console.log(pessoa.frutas[1]); // Banana
+console.log(pessoa.frutas[2]); // Morango
+```
+
+### Propriedades e Métodos
+- `this`: Referencia o objeto atual.
+- `delete`: Remove uma propriedade de um objeto.
+- `in`: Retorna true se a propriedade existir no objeto.
+- `hasOwnProperty()`: Retorna true se a propriedade for uma propriedade própria do objeto.
+- `Object.keys()`: Retorna um array com as propriedades do objeto.
+- `Object.values()`: Retorna um array com os valores das propriedades do objeto.
+- `Object.entries()`: Retorna um array com as propriedades e valores do objeto.
+
+```javascript
+var pessoa = {
+  nome: 'Fulano',
+  idade: 30,
+  isEstudante: true
+};
+
+console.log(pessoa.hasOwnProperty('nome')); // true
+console.log(pessoa.hasOwnProperty('sobrenome')); // false
+console.log(Object.keys(pessoa)); // ['nome', 'idade', 'isEstudante']
+console.log(Object.values(pessoa)); // ['Fulano', 30, true]
+console.log(Object.entries(pessoa)); // [['nome', 'Fulano'], ['idade', 30], ['isEstudante', true]]
+
+delete pessoa.isEstudante;
+console.log(pessoa); // {nome: 'Fulano', idade: 30}
+
+console.log('nome' in pessoa); // true
+console.log('sobrenome' in pessoa); // false
+
+for (var propriedade in pessoa) {
+  console.log(propriedade + ': ' + pessoa[propriedade]);
+}
+
+// nome: Fulano
+// idade: 30
+```
+
+### Construtor de Objetos
+Um construtor de objetos é uma função que cria objetos.
+
+```javascript
+function Pessoa(nome, idade, isEstudante) {
+  this.nome = nome;
+  this.idade = idade;
+  this.isEstudante = isEstudante;
+  this.saudacao = function() {
+    return 'Olá, ' + this.nome + '!';
+  };
+}
+
+var fulano = new Pessoa('Fulano', 30, true);
+
+console.log(fulano.nome); // Fulano
+console.log(fulano.idade); // 30
+console.log(fulano.isEstudante); // true
+console.log(fulano.saudacao()); // Olá, Fulano!
+```
+
+### Protótipo
+O protótipo é um objeto que contém propriedades e métodos que são compartilhados por todos os objetos de um tipo.
+
+```javascript
+function Pessoa(nome, idade, isEstudante) {
+  this.nome = nome;
+  this.idade = idade;
+  this.isEstudante = isEstudante;
+}
+
+Pessoa.prototype.saudacao = function() {
+  return 'Olá, ' + this.nome + '!';
+}; 
+
+var fulano = new Pessoa('Fulano', 30, true);
+
+console.log(fulano.saudacao()); // Olá, Fulano!
+```

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    
+    <script>
+        // It is a common practice to declare objects with the const keyword.
+
+        const person = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 50,
+            eyeColor: "blue",
+            location: {
+                city: "New York",
+                country: "USA"
+            },
+            fullName: function() {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+
+        console.log(person);
+        console.log(person.firstName);
+        console.log(person["lastName"]);
+        console.log(person.fullName());
+        console.log(person.location.city);
+
+        // Adding new properties to an object is easy:
+        person.height = 180;
+        console.log(person.height);
+
+        // Deleting a property from an object:
+        delete person.age;
+        console.log(person.age);
+        console.log(person);
+
+        // The this Keyword
+        // In a function definition, this refers to the "owner" of the function.
+        // In the example above, this is the person object that "owns" the fullName function.
+
+        // In other words, this.firstName means the firstName property of this object.
+
+        // The value of this will become the new object when a new object is created.
+
+        // The this Keyword Alone
+        // When used alone, the owner is the Global object, so this refers to the Global object.
+
+        // In a browser window the Global object is [object Window]:
+
+        // this in a Global context
+        console.log(this);
+
+        const car = {
+            type: "Fiat",
+            model: "500",
+            color: "white",
+        }
+
+        console.log(typeof car);
+        car.type = "Toyota";
+        console.log(car.type);
+        car.wheels = 4;
+        console.log(car);
+
+    </script>
+</body>
+</html>
