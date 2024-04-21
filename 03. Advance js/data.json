@@ -1,0 +1,16 @@
+{
+    "nome": "João",
+    "idade": 25,
+    "email": "js@gmail.com",
+    "isAtivo": true,
+    "endereco": {
+        "rua": "Rua 1",
+        "numero": 123,
+        "bairro": "Centro"
+    },
+    "hobbies": [
+        "Futebol",
+        "Leitura",
+        "Cinema"
+    ]
+}

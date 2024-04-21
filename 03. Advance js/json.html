@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const person = {
+            "nome": "João",
+            "idade": 25,
+            "email": "js@gmail.com",
+            "isAtivo": true,
+            "endereco": {
+                "rua": "Rua 1",
+                "numero": 123,
+                "bairro": "Centro"
+            },
+            "hobbies": [
+                "Futebol",
+                "Leitura",
+                "Cinema"
+            ]
+        }
+
+        console.log(typeof person);
+
+        const personJSON = JSON.stringify(person);//convertendo objeto para JSON
+        console.log(personJSON);
+
+        const personObject = JSON.parse(personJSON);//convertendo JSON para objeto
+        console.log(personObject);
+    </script>
+</body>
+
+</html>

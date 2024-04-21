@@ -74,6 +74,8 @@ Sinta-se à vontade para contribuir com este repositório, adicionando exemplos 
     - [Propriedades e Métodos](#propriedades-e-métodos)
     - [Construtor de Objetos](#construtor-de-objetos)
     - [Protótipo](#protótipo)
+24. [JSON](#json)
+    - [Métodos](#métodos)
 
 ## Adicionando javascript a um documento HTML
 Existe três formas de adicionar javascript a um documento HTML:
@@ -1154,3 +1156,35 @@ var fulano = new Pessoa('Fulano', 30, true);
 
 console.log(fulano.saudacao()); // Olá, Fulano!
 ```
+
+## JSON
+JSON (JavaScript Object Notation) é um formato de dados que é fácil de ler e escrever para humanos e fácil de analisar e gerar para máquinas.
+
+```json
+{
+  "nome": "Fulano",
+  "idade": 30,
+  "isEstudante": true
+}
+```
+
+### Métodos
+- `JSON.stringify()`: Converte um objeto em uma string JSON.
+- `JSON.parse()`: Converte uma string JSON em um objeto.
+
+```javascript
+var pessoa = {
+  nome: 'Fulano',
+  idade: 30,
+  isEstudante: true
+};
+
+var json = JSON.stringify(pessoa);
+
+console.log(json); // {"nome":"Fulano","idade":30,"isEstudante":true}
+
+var objeto = JSON.parse(json);
+
+console.log(objeto); // {nome: 'Fulano', idade: 30, isEstudante: true}
+```
+
