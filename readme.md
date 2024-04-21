@@ -452,7 +452,12 @@ function saudacao(nome) {
   return 'Olá, ' + nome + '!';
 }
 
+function saudacao2(nome) {
+  return 'Olá, ${nome}!';
+}
+
 console.log(saudacao('Fulano')); // Olá, Fulano!
+console.log(saudacao2('Fulano')); // Olá, Fulano!
 ```
 
 ### Flexibilidade de parametros
