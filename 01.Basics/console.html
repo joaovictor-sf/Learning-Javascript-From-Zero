@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Tipos de console
+        console.log('Log');
+        console.info('Info');
+        console.warn('Warn');
+        console.error('Error');
+        console.assert(1 === 1, 'Mensagem de erro');
+        //console.clear();//Limpa o console
+        console.group('Grupo 1');
+        console.log('Dentro do grupo 1');
+        console.group('Grupo 2');
+        console.log('Dentro do grupo 2');
+        console.groupEnd('Grupo 2');
+        console.groupEnd('Grupo 1');
+        console.table(['Item 1', 'Item 2', 'Item 3']);//Exibe em forma de tabela
+        console.count('Contador');//Conta quantas vezes foi chamado
+        console.count('Contador');
+        console.count('Contador');
+        console.countReset('Contador');//Reseta o contador
+        console.count('Contador');
+        console.time('Timer');
+        console.timeLog('Timer');
+        console.timeEnd('Timer');
+        console.trace('Trace');//Mostra a pilha de chamadas
+        console.table([{nome: 'Lucas', idade: 23}, {nome: 'João', idade: 25}]);
+    </script>
+</body>
+</html>

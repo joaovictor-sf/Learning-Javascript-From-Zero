@@ -18,3 +18,8 @@ console.log(nome);
 
 //Concatenação
 document.write("<br>" + nome + " is " + age + " years old." + " He earns " + salary + " and is married: " + isMarried);
+
+//Tipos de variáveis
+var x = 10;
+let y = 20;
+const z = 30;

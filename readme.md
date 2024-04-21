@@ -52,7 +52,7 @@ Sinta-se à vontade para contribuir com este repositório, adicionando exemplos 
     - [Ordenação de Números](#ordenação-de-números)
     - [Ordenação com caracteres maiúsculos e minúsculos](#ordenação-com-caracteres-maiúsculos-e-minúsculos)
     - [Arrays Multidimensionais](#arrays-multidimensionais)
-19 [Loops](#loops)
+19. [Loops](#loops)
     - [While](#while)
     - [Do/While](#dowhile)
     - [For](#for)
@@ -108,14 +108,24 @@ de múltiplas linhas
 ```
 
 ## Variáveis
-Em javascript, utilizamos a palavra-chave `var` para declarar variáveis. As variáveis podem armazenar diferentes tipos de dados, como números, strings e booleanos.
+Uma variável é um contêiner para armazenar dados. Em javascript, as variáveis são declaradas utilizando as palavras-chave `var`, `let` ou `const`.
+
+- `var`: Declara uma variável global ou local.
+- `let`: Declara uma variável local.
+- `const`: Declara uma constante (um valor que não pode ser alterado).
+
+Uma variável global pode ser acessada de qualquer lugar do código, enquanto uma variável local só pode ser acessada dentro de um bloco de código específico.
+
+Hoje em dia, é recomendado utilizar `let` e `const` em vez de `var`, pois eles possuem um escopo de bloco mais restrito.
 
 #### Exemplo de declaração de variáveis:
 ```javascript
 var nome = 'Fulano';
-var idade = 30;
-var isEstudante = true;
+let idade = 30;
+const isEstudante = true;
 ```
+
+Obs: Uma variável não pode ser nomeada com uma palavra reservada, como `var`, `let`, `const`, `function`, etc.
 
 ### Tipos de Dados
 Em javascript, temos os seguintes tipos de dados:
@@ -129,13 +139,13 @@ Em javascript, temos os seguintes tipos de dados:
 
 #### Exemplos de tipos de dados:
 ```javascript
-var nome = 'Fulano'; // String
-var idade = 30; // Number
-var isEstudante = true; // Boolean
-var frutas = ['Maçã', 'Banana', 'Morango']; // Array
-var pessoa = {nome: 'Fulano', idade: 30}; // Object
-var vazio = undefined; // Undefined
-var nulo = null; // Null
+let nome = 'Fulano'; // String
+let idade = 30; // Number
+let isEstudante = true; // Boolean
+let frutas = ['Maçã', 'Banana', 'Morango']; // Array
+let pessoa = {nome: 'Fulano', idade: 30}; // Object
+let valor; // Undefined
+let nulo = null; // Null
 ```
 **Regras**:
 - O nome de uma variável deve começar com uma letra, `$` ou `_`.
@@ -146,6 +156,34 @@ var nulo = null; // Null
 **Null vs Undefined**:
 - `null` é um valor atribuído pelo programador para indicar a ausência de valor.
 - `undefined` é um valor atribuído automaticamente pelo JavaScript para indicar que uma variável não foi inicializada.
+
+## Conversão de Tipos
+Em javascript, é possível converter um tipo de dado em outro tipo de dado.
+
+- `Number()`: Converte um valor para número.
+- `String()`: Converte um valor para string.
+- `Boolean()`: Converte um valor para boolean.
+- `parseInt()`: Converte um valor para inteiro.
+- `parseFloat()`: Converte um valor para ponto flutuante.
+- `toString()`: Converte um valor para string.
+
+```javascript
+let numero = '10';
+console.log(Number(numero) + 5); // 15
+```
+
+É possivel conferir o tipo de uma variável utilizando o método `typeof`.
+
+```javascript
+let nome = 'Fulano';
+let idade = 30;
+let isEstudante = true;
+
+console.log(typeof nome); // string
+console.log(typeof idade); // number
+console.log(typeof isEstudante); // boolean
+```
+
 
 ## Alertas
 Para exibir alertas em javascript, utilizamos a função `alert()`.
@@ -195,6 +233,49 @@ console.log('Olá Mundo!');
 Isso é útil para depurar o código javascript e verificar o valor das variáveis durante a execução do programa.
 
 É possivel ver o console do navegador pressionando `F12` e clicando na aba `Console`.
+
+**Shortcuts for vsc**:
+- `log` -> `console.log()`
+- `clg` -> `console.log()`
+
+**Tipos de Console**
+- `console.log()`: Exibe uma mensagem no console.
+- `console.error()`: Exibe uma mensagem de erro no console.
+- `console.warn()`: Exibe uma mensagem de aviso no console.
+- `console.info()`: Exibe uma mensagem de informação no console.
+- `console.table()`: Exibe uma tabela no console.
+- `console.time()`: Inicia um temporizador no console.
+- `console.timeEnd()`: Para um temporizador no console.
+- `console.clear()`: Limpa o console.
+
+**Outros Métodos**
+```javascript
+    console.log('Log');
+    console.info('Info');
+    console.warn('Warn');
+    console.error('Error');
+    console.assert(1 === 1, 'Mensagem de erro');
+    //console.clear();//Limpa o console
+    console.group('Grupo 1');
+    console.log('Dentro do grupo 1');
+    console.group('Grupo 2');
+    console.log('Dentro do grupo 2');
+    console.groupEnd('Grupo 2');
+    console.groupEnd('Grupo 1');
+    console.table(['Item 1', 'Item 2', 'Item 3']);//Exibe em forma de tabela
+    console.count('Contador');//Conta quantas vezes foi chamado
+    console.count('Contador');
+    console.count('Contador');
+    console.countReset('Contador');//Reseta o contador
+    console.count('Contador');
+    console.time('Timer');
+    console.timeLog('Timer');
+    console.timeEnd('Timer');
+    console.trace('Trace');//Mostra a pilha de chamadas
+    console.table([{nome: 'Lucas', idade: 23}, {nome: 'João', idade: 25}]);
+```
+
+![No Console](imagesForReadme/console_1.PNG)
 
 ## Concatenação
 Para concatenar strings em javascript, utilizamos o operador `+`.
@@ -478,9 +559,15 @@ As strings possuem várias propriedades e métodos que nos permitem manipular e 
     console.log(texto.toLowerCase()); // olá, mundo!
     console.log(texto.charAt(4)); // ,
     console.log(texto.indexOf('Mundo')); // 5
-    console.log(texto.slice(5, 10)); // Mundo
+    console.log(texto.slice(5, 10)); // slice(posição inicial, posição final) -> Mundo
     console.log(texto.replace('Mundo', 'JavaScript')); // Olá, JavaScript!
     console.log(texto.split(', ')); // ['Olá', 'Mundo!']
+    console.log(texto.split('').join('-'));//O-l-á-,- -M-u-n-d-o-!
+    console.log(texto.substr(5, 5)); // substr(posição inicial, quantidade de caracteres) -> Mundo
+    console.log(texto.trim()); // Remove espaços em branco no início e no final
+    console.log(texto.startsWith('Olá')); // true
+    console.log(texto.endsWith('!')); // true
+    console.log(texto.includes('Mundo')); // true
 ```
 
 ## Math
@@ -620,6 +707,7 @@ Os arrays possuem vários métodos que nos permitem manipular e percorrer os ele
 
 ```javascript
 var frutas = ['Maçã', 'Banana', 'Morango'];
+let frutas2 = ['Maçã', 'Banana', 'Morango'];
 
 console.log(frutas.length); // Mostra a quantidades de elementos - 3
 console.log(frutas.join(', ')); // Devolve uma string com os elementos separados pelo o que estiver no paragrafo - Maçã, Banana, Morango
@@ -633,6 +721,7 @@ console.log(frutas.reverse()); // Inverte a ordem dos elementos
 console.log(frutas.sort()); // Ordena os elementos
 console.log(frutas.indexOf('Banana')); // Retorna o índice de um elemento
 console.log(frutas.includes('Banana')); // Retorna true se um elemento existe
+console.log(frutas.concat(frutas2)); // Concatena dois arrays
 ```
 
 **Ordenação de Números**:
