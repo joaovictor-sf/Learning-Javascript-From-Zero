@@ -37,6 +37,7 @@ Sinta-se à vontade para contribuir com este repositório, adicionando exemplos 
     - [Arrow Functions](#arrow-functions)
 14. [String](#string)
     - [Propriedades e Métodos](#propriedades-e-métodos)
+    - [Template Strings](#template-strings)
 15. [Math](#math)
 16. [Date](#date)
 17. [Eventos](#eventos)
@@ -76,6 +77,11 @@ Sinta-se à vontade para contribuir com este repositório, adicionando exemplos 
     - [Protótipo](#protótipo)
 24. [JSON](#json)
     - [Métodos](#métodos)
+25. [Intervalos e Temporizadores](#intervalos-e-temporizadores)
+    - [setInterval()](#setinterval)
+    - [clearInterval()](#clearinterval)
+    - [setTimeout()](#settimeout)
+    - [clearTimeout()](#cleartimeout)
 
 ## Adicionando javascript a um documento HTML
 Existe três formas de adicionar javascript a um documento HTML:
@@ -586,6 +592,34 @@ As strings possuem várias propriedades e métodos que nos permitem manipular e 
     console.log(texto.includes('Mundo')); // true
 ```
 
+### Template Strings
+As template strings são strings que permitem a interpolação de variáveis e a quebra de linha. Elas tambem permitem o uso de expressões e funções.
+
+```javascript
+var nome = 'Fulano';
+var idade = 30;
+
+var texto = `Olá, ${nome}!
+Você tem ${idade} anos.`;
+
+console.log(texto);
+// Olá, Fulano!
+// Você tem 30 anos.
+```
+
+Template strings são delimitadas por crases(`) em vez de aspas simples ou duplas.
+
+É possivel ultilizar usar ${} em uma string normal, mas não é possivel usar quebra de linha.
+
+```javascript
+var nome = 'Fulano';
+var idade = 30;
+
+//Para quebrar a linha, é necessario usar \n
+var texto = 'Olá, ' + nome + '!\n' +
+'Você tem ' + idade + ' anos.';
+```
+
 ## Math
 O objeto `Math` nos fornece métodos e constantes para realizar operações matemáticas.
 
@@ -612,13 +646,35 @@ console.log(data); // Data específica
 var data = new Date(2021, 0, 1);
 console.log(data); // Data específica
 
-var data = new Date();
+var data = new Date();//Data e hora atuais
 
 var dia = data.getDate();
-var mes = data.getMonth() + 1;
+var mes = data.getMonth();
 var ano = data.getFullYear();
 
-console.log(dia + '/' + mes + '/' + ano); // Data formatada
+console.log(dia + '/' + mes + '/' + ano);// Data formatada
+
+//Date(Ano, Mês, Dia, Hora, Minuto, Segundo, Milisegundo)
+const data2 = new Date(2021, 0, 1, 12, 30, 0, 0);
+console.log(data2);//Fri Jan 01 2021 12:30:00 GMT-0300 (Horário Padrão de Brasília)
+```
+
+**Métodos alem dos get e set**:
+- 'toDateString()': Retorna a data em formato de string.
+- 'toTimeString()': Retorna a hora em formato de string.
+- 'toLocaleDateString()': Retorna a data em formato de string de acordo com a localização.
+- 'toUTCString()': Retorna a data e hora em formato de string UTC.
+- 'toISOString()': Retorna a data e hora em formato de string ISO.
+- 'toLocateString()': Retorna a data e hora em formato de string de acordo com a localização.
+
+```javascript
+var data = new Date(2021, 0, 1, 12, 30, 0, 0);
+console.log(data.toDateString());// Fri Jan 01 2021
+console.log(data.toTimeString());// 12:30:00 GMT-0300 (Horário Padrão de Brasília)
+console.log(data.toLocaleDateString());// 1/1/2021
+console.log(data.toUTCString());// Fri, 01 Jan 2021 15:30:00 GMT
+console.log(data.toISOString());// 2021-01-01T15:30:00.000Z
+console.log(data.toLocaleString());// 1/1/2021, 12:30:00
 ```
 
 ## Eventos
@@ -1188,3 +1244,53 @@ var objeto = JSON.parse(json);
 console.log(objeto); // {nome: 'Fulano', idade: 30, isEstudante: true}
 ```
 
+## Intervalos e Temporizadores
+Os intervalos e temporizadores são utilizados para executar um bloco de código repetidamente ou após um determinado período de tempo.
+
+### setInterval
+O método `setInterval` é utilizado para executar um bloco de código repetidamente em intervalos regulares.
+
+```javascript
+// Executa a cada 1 segundo
+setInterval(function() {
+  console.log('Olá Mundo!');
+}, 1000);
+```
+
+### setTimeout
+O método `setTimeout` é utilizado para executar um bloco de código após um determinado período de tempo.
+
+```javascript
+// Executa após 1 segundo
+setTimeout(function() {
+  console.log('Olá Mundo!');
+}, 1000);
+```
+
+### clearInterval
+O método `clearInterval` é utilizado para parar a execução de um intervalo.
+
+```javascript
+var intervalo = setInterval(function() {
+  console.log('Olá Mundo!');
+}, 1000);
+
+// Para a execução após 5 segundos
+setTimeout(function() {
+  clearInterval(intervalo);
+}, 5000);
+```
+
+### clearTimeout
+O método `clearTimeout` é utilizado para parar a execução de um temporizador.
+
+```javascript
+var temporizador = setTimeout(function() {
+  console.log('Olá Mundo!');
+}, 1000);
+
+// Para a execução após 5 segundos
+setTimeout(function() {
+  clearTimeout(temporizador);
+}, 5000);
+```
