@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // Object Oriented Programming
+        // Class
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            // Method
+            sayHello() {
+                console.log('Hello, I am ' + this.name);
+            }
+
+            //Getter
+            get getName() {
+                return this.name;
+            }
+
+            //Setter
+            set setName(name) {
+                this.name = name;
+            }
+        }
+
+        // Object
+        let p1 = new Person('John Doe', 25);
+        let p2 = new Person('Jane Doe', 22);
+
+        console.log(p1);
+        console.log(p2);
+
+        p1.sayHello();
+        p2.sayHello();
+    </script>
+</body>
+</html>

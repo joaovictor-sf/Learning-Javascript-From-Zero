@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        class Animal {
+            constructor(name) {
+                this.name = name;
+            }
+
+            speak() {
+                console.log(this.name + ' makes a noise.');
+            }
+        }
+
+        class Dog extends Animal {
+            //Se a classe filha não tiver um construtor, o construtor da classe pai é chamado automaticamente
+            //Portanto, a não ser que você queira adicionar algo ao construtor da classe filha, não é necessário declarar um construtor
+            constructor(name, raca) {
+                super(name); // call the super class constructor and pass in the name parameter
+                this.raca = raca;
+            }
+
+            speak() {
+                console.log(this.name + ' barks.');
+            }
+        }
+
+        let dog = new Dog('Rex');
+        dog.speak();
+        console.log("hi");
+    </script>
+</body>
+</html>

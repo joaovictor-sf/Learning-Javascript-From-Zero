@@ -82,6 +82,14 @@ Sinta-se à vontade para contribuir com este repositório, adicionando exemplos 
     - [clearInterval()](#clearinterval)
     - [setTimeout()](#settimeout)
     - [clearTimeout()](#cleartimeout)
+26. [Programação Orientada a Objetos](#programação-orientada-a-objetos)
+    - [Classes](#classes)
+    - [Herança](#herança)
+    - [Métodos Estáticos](#métodos-estáticos)
+    - [Super](#super)
+    - [Polimorfismo](#polimorfismo)
+    - [Encapsulamento](#encapsulamento)
+
 
 ## Adicionando javascript a um documento HTML
 Existe três formas de adicionar javascript a um documento HTML:
@@ -1294,3 +1302,153 @@ setTimeout(function() {
   clearTimeout(temporizador);
 }, 5000);
 ```
+
+## Programação Orientada a Objetos
+A programação orientada a objetos é um paradigma de programação baseado em objetos. Um objeto é uma instância de uma classe que possui propriedades e métodos.
+
+### Classes
+Uma classe é um modelo para criar objetos.
+
+```javascript
+class Pessoa {
+  constructor(nome, idade, isEstudante) {
+    this.nome = nome;
+    this.idade = idade;
+    this.isEstudante = isEstudante;
+  }
+
+  saudacao() {
+    return 'Olá, ' + this.nome + '!';
+  }
+}
+
+var fulano = new Pessoa('Fulano', 30, true);
+
+console.log(fulano.nome); // Fulano
+console.log(fulano.idade); // 30
+console.log(fulano.isEstudante); // true
+console.log(fulano.saudacao()); // Olá, Fulano!
+```
+
+**Contrutor:** O método `constructor` é utilizado para inicializar as propriedades de um objeto.
+
+**Métodos:** Os métodos são funções que pertencem a uma classe.
+
+### Herança
+A herança é um mecanismo que permite que uma classe herde propriedades e métodos de outra classe.
+
+```javascript
+class Pessoa {
+  constructor(nome, idade) {
+    this.nome = nome;
+    this.idade = idade;
+  }
+
+  saudacao() {
+    return 'Olá, ' + this.nome + '!';
+  }
+}
+
+class Estudante extends Pessoa {
+  constructor(nome, idade, curso) {
+    super(nome, idade);
+    this.curso = curso;
+  }
+
+  estudar() {
+    return this.nome + ' está estudando ' + this.curso + '.';
+  }
+}
+
+var fulano = new Estudante('Fulano', 30, 'JavaScript');
+
+console.log(fulano.saudacao()); // Olá, Fulano!
+console.log(fulano.estudar()); // Fulano está estudando JavaScript.
+```
+
+A herança é feita utilizando a palavra-chave `extends` e o método `super` é utilizado para chamar o construtor da classe pai.
+
+Herança é utilizada para reutilizar código e criar uma hierarquia de classes.
+
+### Métodos Estáticos
+Os métodos estáticos são métodos que pertencem à classe em vez de uma instância da classe.
+
+```javascript
+class Util {
+  static somar(a, b) {
+    return a + b;
+  }
+
+  static subtrair(a, b) {
+    return a - b;
+  }
+}
+
+console.log(Util.somar(5, 3)); // 8
+console.log(Util.subtrair(5, 3)); // 2
+```
+
+Os métodos estáticos são chamados diretamente na classe, sem a necessidade de criar uma instância da classe.
+
+### Polimorfismo
+O polimorfismo é a capacidade de um objeto de se comportar de várias formas.
+
+```javascript
+class Animal {
+  falar() {
+    return 'O animal faz barulho.';
+  }
+}
+
+class Cachorro extends Animal {
+  falar() {
+    return 'O cachorro late.';
+  }
+}
+
+class Gato extends Animal {
+  falar() {
+    return 'O gato mia.';
+  }
+}
+
+var animal = new Animal();
+var cachorro = new Cachorro();
+var gato = new Gato();
+
+console.log(animal.falar()); // O animal faz barulho.
+console.log(cachorro.falar()); // O cachorro late.
+console.log(gato.falar()); // O gato mia.
+```
+
+O polimorfismo é utilizado para criar classes que compartilham o mesmo nome de método, mas possuem comportamentos diferentes.
+
+### Encapsulamento
+O encapsulamento é o conceito de esconder os detalhes de implementação de um objeto e expor apenas a interface.
+
+```javascript
+class Conta {
+  #saldo = 0;
+
+  depositar(valor) {
+    this.#saldo += valor;
+  }
+
+  sacar(valor) {
+    this.#saldo -= valor;
+  }
+
+  getSaldo() {
+    return this.#saldo;
+  }
+}
+
+var conta = new Conta();
+
+conta.depositar(100);
+conta.sacar(50);
+
+console.log(conta.getSaldo()); // 50
+```
+
+O encapsulamento é utilizado para proteger os dados de um objeto e garantir que eles sejam acessados apenas por métodos específicos.
