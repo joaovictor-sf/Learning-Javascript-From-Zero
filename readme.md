@@ -67,7 +67,7 @@ Sinta-se à vontade para contribuir com este repositório, adicionando exemplos 
     - [Screen](#screen)
     - [Location](#location)
     - [Outros métodos](#outros-métodos)
-23. [Objeto](#objeto)
+23. [Objeto Literal](#objeto)
     - [Adicionar Propriedades e Métodos](#adicionar-propriedades-e-métodos)
     - [Modificar Propriedades e Métodos](#modificar-propriedades-e-métodos)
     - [Objetos Aninhados](#objetos-aninhados)
@@ -89,6 +89,10 @@ Sinta-se à vontade para contribuir com este repositório, adicionando exemplos 
     - [Super](#super)
     - [Polimorfismo](#polimorfismo)
     - [Encapsulamento](#encapsulamento)
+    - [Classes ou Objetos Literais](#classes-ou-objetos-literais)
+    - [Prototype](#prototype)
+27. [Spread/Rest](#spreadrest)
+28. [Destructuring](#destructuring)
 
 
 ## Adicionando javascript a um documento HTML
@@ -1452,3 +1456,75 @@ console.log(conta.getSaldo()); // 50
 ```
 
 O encapsulamento é utilizado para proteger os dados de um objeto e garantir que eles sejam acessados apenas por métodos específicos.
+
+### Classes ou Objetos Literais
+- **Classes**: Utilize classes quando precisar de herança, polimorfismo e encapsulamento.
+- **Objetos Literais**: Utilize objetos literais quando precisar de um objeto simples com propriedades e métodos.
+
+### Prototype
+O protótipo é um objeto que contém propriedades e métodos que são compartilhados por todos os objetos de um tipo.
+
+```javascript
+function Pessoa(nome, idade) {
+  this.nome = nome;
+  this.idade = idade;
+}
+
+Pessoa.prototype.saudacao = function() {
+  return 'Olá, ' + this.nome + '!';
+};
+
+var fulano = new Pessoa('Fulano', 30);
+
+console.log(fulano.saudacao()); // Olá, Fulano!
+```
+
+O protótipo é utilizado para compartilhar propriedades e métodos entre todos os objetos de um tipo.
+
+## Spread/Rest
+O operador `spread` é utilizado para espalhar os elementos de um array ou objeto.
+
+```javascript
+var frutas = ['Maçã', 'Banana', 'Morango'];
+var frutas2 = ['Laranja', 'Uva'];
+
+var frutas3 = [...frutas, ...frutas2];
+
+console.log(frutas3); // ['Maçã', 'Banana', 'Morango', 'Laranja', 'Uva']
+```
+
+O operador `rest` é utilizado para agrupar os elementos de um array em um único parâmetro.
+
+```javascript
+function somar(...numeros) {
+  return numeros.reduce((total, numero) => total + numero, 0);
+}
+
+console.log(somar(1, 2, 3, 4, 5)); // 15
+```
+
+O operador `spread` é utilizado para espalhar os elementos de um array ou objeto. O operador `rest` é utilizado para agrupar os elementos de um array em um único parâmetro.
+
+## Destructuring
+O destructuring é utilizado para extrair valores de arrays ou objetos e atribuí-los a variáveis.
+
+```javascript
+var frutas = ['Maçã', 'Banana', 'Morango'];
+
+var [fruta1, fruta2, fruta3] = frutas;
+
+console.log(fruta1); // Maçã
+console.log(fruta2); // Banana
+console.log(fruta3); // Morango
+```
+
+```javascript
+var pessoa = {nome: 'Fulano', idade: 30};
+
+var {nome, idade} = pessoa;
+
+console.log(nome); // Fulano
+console.log(idade); // 30
+```
+
+O destructuring é utilizado para extrair valores de arrays ou objetos e atribuí-los a variáveis.

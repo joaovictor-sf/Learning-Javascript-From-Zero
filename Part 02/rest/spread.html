@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //Com objetos
+        const obj = {
+            name: 'John',
+            age: 25,
+            country: 'USA'
+        };
+
+        const obj2 = {
+            ...obj,
+            country: 'Canada'
+        };
+
+        console.log(obj);
+        console.log(obj2);
+
+        const obj3 = {
+            ...obj,
+            country: 'Canada',
+            job: 'Developer'
+        };
+
+        console.log(obj3);
+
+        //Com arrays e strings
+        const string = 'Hello';
+
+        console.log([...string]);
+
+        const array = [1, 2, 3, 4, 5];
+
+        console.log([...array]);
+
+        const array2 = [...array, 6, 7, 8, 9, 10];
+
+        console.log(array2);
+
+        //Com funções
+        const sum = (a, b, c) => {
+            return a + b + c;
+        };
+
+        const numbers = [1, 2, 3];
+
+        console.log(sum(...numbers));
+
+        const sum2 = (...args) => {
+            return args.reduce((a, b) => a + b);
+        };
+
+        console.log(sum2(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+    </script>
+</body>
+</html>
