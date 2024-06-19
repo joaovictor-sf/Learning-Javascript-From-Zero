@@ -1528,3 +1528,48 @@ console.log(idade); // 30
 ```
 
 O destructuring é utilizado para extrair valores de arrays ou objetos e atribuí-los a variáveis.
+
+## Generators
+Os generators são funções especiais que podem ser pausadas e retomadas.
+
+```javascript
+function* gerador() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+var g = gerador();
+
+console.log(g.next().value); // 1
+console.log(g.next().value); // 2
+console.log(g.next().value); // 3
+```
+
+Eles são utilizados para criar iteradores de forma mais simples.
+
+Elas são criadas utilizando o `function*`. O `yield` é utilizado para pausar a execução da função e retornar um valor.
+
+## Promises
+As promises são objetos que representam a eventual conclusão ou falha de uma operação assíncrona.
+
+```javascript
+var promise = new Promise(function(resolve, reject) {
+  setTimeout(function() {
+    resolve('Olá Mundo!');
+  }, 1000);
+});
+
+promise.then(function(resultado) {
+  console.log(resultado);
+});
+```
+Promises possuem três estados: pendente, resolvida e rejeitada.
+
+- `pending`: Estado inicial, a promise ainda não foi resolvida ou rejeitada.
+- `resolve()`: É utilizado para resolver a promise.
+- `reject()`: É utilizado para rejeitar a promise.
+
+Promises contém os métodos `then()` e `catch()` para lidar com a resolução e rejeição da promise.
+
+Promises costumam ser utilizadas para requisições http, operações de leitura e escrita de arquivos, entre outras operações assíncronas.

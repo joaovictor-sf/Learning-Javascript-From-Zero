@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<div id="teste"></div>
+
+<body>
+    <script>
+        function* generar(){
+            console.log("1");
+            console.log("2");
+            console.log("3");
+            return 4;
+        }
+
+        let g = generar();
+        console.log(g);
+        console.log(g.next());
+
+        console.log("*********************");
+
+        function* generar2(){
+            yield 1;
+            yield "String 2";
+            yield 3;
+            return 4;
+        }
+
+        let g2 = generar2();
+        console.log(g2);
+        console.log(g2.next().value); // 1
+        console.log(g2.next().value); // 2
+        console.log(g2.next()); // 3
+        console.log(g2.next()); // 4
+        
+    </script>
+</body>
+</html>

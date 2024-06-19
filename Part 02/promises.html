@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+
+<div id="teste"></div>
+
+<body>
+    <script>
+        let promessa = new Promise((resolve, reject) => {
+            let x = 0;
+            if (x == 0) {
+                resolve('OK');
+            } else {
+                reject('Erro');
+            }
+        });
+
+        promessa.then((resposta) => {
+            document.getElementById('teste').innerHTML = resposta;
+        }).catch((erro) => {
+            document.getElementById('teste').innerHTML = erro;
+        });
+
+
+        
+    </script>
+</body>
+</html>
